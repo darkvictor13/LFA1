@@ -5,6 +5,7 @@
 
 // ponto de entrada do programa
 int main(int argc, char **argv) {
+    //linha adicionada pelo victor, para dar merge
     string fileName;
     if (argc == 1) {
         fileName = findNameFile();
