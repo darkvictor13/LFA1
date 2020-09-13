@@ -5,13 +5,14 @@
 
 // ponto de entrada do programa
 int main(int argc, char **argv) {
-     if (argc == 1) {
-         //como tem que fazer essa verificação para funcionar
-         //da para separar em 2 funções melhores
-         verifySelectFile("", argc);
-     }else {
-         verifySelectFile(argv[1], argc);
-     }
-     cout << "acabei\n";
-     return 0;
+    string fileName;
+    if (argc == 1) {
+        fileName = findNameFile();
+    }else if (argc == 2){
+       fileName = argv[1]; 
+    }else {
+        errorMensage();
+    }
+    cout << "o nome do arquivinhu é: " << fileName << endl;
+    return 0;
 }

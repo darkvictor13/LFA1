@@ -2,8 +2,9 @@
 
 // importando bibliotecas
 #include "structure_library.h"
+#include <string>
 
-// função para retirar os espaços vacios de uma string, linha
+// função para retirar os espaços vazios de uma string, linha
 string clearBlank(string line) {
 
     string newLine = "";
@@ -16,52 +17,44 @@ string clearBlank(string line) {
     return newLine;
 }
 
-// função que verifica o arquivo selecionado pelo usuário
-string verifySelectFile(string fileName, int argumentsCounter) {
-    // quando a string é vazia buga o negócio
-    if (argumentsCounter <= 0 || 3 <= argumentsCounter) {
-        cout << "Você está usando o programa de forma errada!\n";
-        cout << "Por favor rode:\n";
-        cout << "[Nome do programa] [espaço em branco] [nome do arquivo com os dados]\n";
-        exit(EXIT_FAILURE);
+bool findCaracter (string s, char c) {
+    for (int i = 0; i < (int)s.size(); i++) {
+        if (s[i] == c) {
+            return true;
+        }
     }
-    if (argumentsCounter == 1) {
-        // fileName precisaria estar inicializada, porém não está
-        cout << "Você não nos informou o nome do arquivo com os dados\n";
-        cout << "Por favor insira o nome aqui -> ";
-        cin >> fileName;
-        if (!fileName.find(".")) {
-            string aux;
-            cout << "Qual a extensão desse aquivo que você me passou?\n"; 
-            cout << "Ele é um txt? Um log? Ou o que?\n";
-            cout << "Entre com a extensão do arquivo -> ";
-            cin >> aux;
+    return false;
+}
 
-            if (aux[0] != '.') {
-                fileName += '.';
-            }
-            fileName += aux;
-        }
-    }else {
-        char test;
-        cout << "Nome do arquivo: " << fileName << endl;
-        cout << "Você tem certeza que esse arquivo existe? [s/n]\n";
-        cin >> test;
-        if (test == 'N' || test == 'n') {
-            cout << "Então nos informe o nome correto\n->";
-            cin >> fileName;
-        }
-        while(test != 's' && test != 'S') {
-            cout << "carácter inválido, tente novamente\n" << "->";
-            cin >> test;
+string findNameFile () {
+    string fileName;
+    cout << "Você não nos informou o nome do arquivo com os dados\n";
+    cout << "Por favor insira o nome aqui -> ";
+    cin >> fileName;
+    if (!findCaracter(fileName, '.')) {
+        string aux;
+        cout << "Qual a extensão desse aquivo que você me passou?\n"; 
+        cout << "Ele é um txt? Um log? Ou o que?\n";
+        cout << "Caso seja um arquivo sem extensão, por favor entre com a palavra [vazio]\n";
+        cout << "Entre com a extensão do arquivo -> ";
+        cin >> aux;
 
-            if (test == 'N' || test == 'n') {
-                cout << "Então nos informe o nome correto\n->";
-                cin >> fileName;
-            }
+        if (aux == "vazio") {
+          return fileName;
         }
+        if (aux[0] != '.') {
+            fileName += '.';
+        }
+        fileName += aux;
     }
     return fileName;
+}
+
+void errorMensage () {
+    cout << "Você está usando o programa de forma errada!\n";
+    cout << "Por favor rode:\n";
+    cout << "[Nome do programa] [espaço em branco] [nome do arquivo com os dados]\n";
+    exit(EXIT_FAILURE);
 }
 
 // função que realiza a leitura do alfabeto de entrada a partir do arquivo entrada
@@ -193,11 +186,11 @@ AutomatonStructure readAutomaton(ifstream* inputFile) {
 }
 
 // função que realiza a leitura do arquivo de entrada
-AutomatonStructure readInputFile() {
+AutomatonStructure readInputFile(string fileName) {
     AutomatonStructure automaton;
     ifstream inputFile;
 
-    inputFile.open( verifySelectFile("init_file_t1", 0) );
+    inputFile.open(fileName);
 
     automaton = readAutomaton(&inputFile);
     
