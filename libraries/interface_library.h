@@ -16,12 +16,44 @@ string removeStringSpaces(string line) {
     return newLine;
 }
 
-// função que verifica o arquivo selecionado pelo usuário
-string verifySelectFile(string fileName, int argumentsCounter) {
-    
-    // verificar o arquivinho selecionado
-    
+bool findCaracter (string s, char c) {
+    for (int i = 0; i < (int)s.size(); i++) {
+        if (s[i] == c) {
+            return true;
+        }
+    }
+    return false;
+}
+
+string findNameFile () {
+    string fileName;
+    cout << "Você não nos informou o nome do arquivo com os dados\n";
+    cout << "Por favor insira o nome aqui -> ";
+    cin >> fileName;
+    if (!findCaracter(fileName, '.')) {
+        string aux;
+        cout << "Qual a extensão desse aquivo que você me passou?\n"; 
+        cout << "Ele é um txt? Um log? Ou o que?\n";
+        cout << "Caso seja um arquivo sem extensão, por favor entre com a palavra [vazio]\n";
+        cout << "Entre com a extensão do arquivo -> ";
+        cin >> aux;
+
+        if (aux == "vazio") {
+          return fileName;
+        }
+        if (aux[0] != '.') {
+            fileName += '.';
+        }
+        fileName += aux;
+    }
     return fileName;
+}
+
+void errorMensage () {
+    cout << "Você está usando o programa de forma errada!\n";
+    cout << "Por favor rode:\n";
+    cout << "[Nome do programa] [espaço em branco] [nome do arquivo com os dados]\n";
+    exit(EXIT_FAILURE);
 }
 
 // função que realiza a leitura do alfabeto de entrada a partir do arquivo entrada
@@ -292,11 +324,11 @@ AutomatonStructure readAutomaton(ifstream* inputFile) {
 }
 
 // função que realiza o manejo do arquivo de entrada
-AutomatonStructure readInputFile() {
+AutomatonStructure readInputFile(string fileName) {
     AutomatonStructure automaton;
     ifstream inputFile;
 
-    inputFile.open( verifySelectFile("init_file_t2", 0) );
+    inputFile.open(fileName);
 
     automaton = readAutomaton(&inputFile);
     
