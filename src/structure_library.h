@@ -17,6 +17,19 @@ struct AlphabetStructure {
     int alphabetSize;
 };
 
+// estrutura de uma única transição
+struct TransitionStructure {
+    string endTransition;
+    string inputCharacter;
+    string outputCharacters;
+};
+
+// estrutura de um conjunto de transições
+struct TransitionsStructure {
+    TransitionStructure transitionStructure[MAX_TRANSITIONS];
+    int numberOfTransitions;
+};
+
 // estrutura de um único estado
 struct StateStructure {
     string stateName;
@@ -33,19 +46,6 @@ struct StatesStructure {
 struct EndStatesStructure {
     string states[MAX_STATES];
     int numberOfEndStates;
-};
-
-// estrutura de uma única transição
-struct TransitionStructure {
-    string endTransition;
-    string inputCharacter;
-    string outputCharacters;
-};
-
-// estrutura de um conjunto de transições
-struct TransitionsStructure {
-    TransitionStructure transitionStructure[MAX_TRANSITIONS];
-    int numberOfTransitions;
 };
 
 // estrutura de um autômato

@@ -1,4 +1,4 @@
-// este arquivo á responsáel por definir todas as funções encarregadas de se comunicar com os dispositivos de entrada é saída
+// este arquivo é responsável por definir todas as funções encarregadas de se comunicar com os dispositivos de entrada é saída
 
 // importando bibliotecas
 #include "structure_library.h"
@@ -18,9 +18,49 @@ string clearBlank(string line) {
 
 // função que verifica o arquivo selecionado pelo usuário
 string verifySelectFile(string fileName, int argumentsCounter) {
-    
-    // verificar o arquivinho selecionado
-    
+    // quando a string é vazia buga o negócio
+    if (argumentsCounter <= 0 || 3 <= argumentsCounter) {
+        cout << "Você está usando o programa de forma errada!\n";
+        cout << "Por favor rode:\n";
+        cout << "[Nome do programa] [espaço em branco] [nome do arquivo com os dados]\n";
+        exit(EXIT_FAILURE);
+    }
+    if (argumentsCounter == 1) {
+        // fileName precisaria estar inicializada, porém não está
+        cout << "Você não nos informou o nome do arquivo com os dados\n";
+        cout << "Por favor insira o nome aqui -> ";
+        cin >> fileName;
+        if (!fileName.find(".")) {
+            string aux;
+            cout << "Qual a extensão desse aquivo que você me passou?\n"; 
+            cout << "Ele é um txt? Um log? Ou o que?\n";
+            cout << "Entre com a extensão do arquivo -> ";
+            cin >> aux;
+
+            if (aux[0] != '.') {
+                fileName += '.';
+            }
+            fileName += aux;
+        }
+    }else {
+        char test;
+        cout << "Nome do arquivo: " << fileName << endl;
+        cout << "Você tem certeza que esse arquivo existe? [s/n]\n";
+        cin >> test;
+        if (test == 'N' || test == 'n') {
+            cout << "Então nos informe o nome correto\n->";
+            cin >> fileName;
+        }
+        while(test != 's' && test != 'S') {
+            cout << "carácter inválido, tente novamente\n" << "->";
+            cin >> test;
+
+            if (test == 'N' || test == 'n') {
+                cout << "Então nos informe o nome correto\n->";
+                cin >> fileName;
+            }
+        }
+    }
     return fileName;
 }
 
