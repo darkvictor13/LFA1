@@ -1,6 +1,8 @@
-#include "funcoes.h"
+// este arquivo serve de ponto de entrada do programa
 
-int main () {
-  teste();
-  return 0;
+// importando bibliotecas
+
+// ponto de entrada do programa
+int main() {
+
 }

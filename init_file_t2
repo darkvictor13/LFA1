@@ -1,0 +1,11 @@
+alfabeto_entrada={a,b,c}
+alfabeto_saida={1,2,c}
+estados={q0,q1,q2,q3}
+inicial=q0
+finais={q2,q3}
+(q0,a) = (q1,11)
+(q1,a) = (q1,11)
+(q1,b) = (q2,2)
+(q2,b) = (q2,2)
+(q2,c) = (q3,ccc)
+(q3,b) = (q2,2)
