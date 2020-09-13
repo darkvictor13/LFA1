@@ -5,7 +5,13 @@
 
 // ponto de entrada do programa
 int main(int argc, char **argv) {
-     verifySelectFile(argv[1], argc);
+     if (argc == 1) {
+         //como tem que fazer essa verificação para funcionar
+         //da para separar em 2 funções melhores
+         verifySelectFile("", argc);
+     }else {
+         verifySelectFile(argv[1], argc);
+     }
      cout << "acabei\n";
      return 0;
 }
