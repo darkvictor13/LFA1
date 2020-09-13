@@ -1,7 +1,7 @@
 // este arquivo serve de ponto de entrada do programa
 
 // importando bibliotecas
-#include "src/interface_library.h"
+#include "libraries/interface_library.h"
 
 // ponto de entrada do programa
 int main(int argc, char **argv) {
@@ -14,6 +14,4 @@ int main(int argc, char **argv) {
     }else {
         errorMensage();
     }
-    cout << "o nome do arquivinhu é: " << fileName << endl;
-    return 0;
 }
