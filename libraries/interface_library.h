@@ -39,7 +39,7 @@ string findNameFile () {
         cin >> aux;
 
         if (aux == "vazio") {
-          return fileName;
+            return fileName;
         }
         if (aux[0] != '.') {
             fileName += '.';

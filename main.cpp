@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
     if (argc == 1) {
         fileName = findNameFile();
     }else if (argc == 2){
-       fileName = argv[1]; 
+        fileName = argv[1]; 
     }else {
         errorMensage();
     }
