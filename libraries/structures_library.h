@@ -3,10 +3,12 @@
 // definindo constantes
 #define MAX_STATES 50
 #define MAX_TRANSITIONS 50
+#define MIN_BLANK_SPACES 4 
 
 // importando bibliotecas
 #include <iostream>
 #include <fstream>
+#include <limits>
 #include <string>
 
 using namespace std;
@@ -20,20 +22,15 @@ struct AlphabetStructure {
 // estrutura de uma única transição
 struct TransitionStructure {
     string endTransition;
-    string inputCharacter;
+    char inputCharacter;
     string outputCharacters;
-};
-
-// estrutura de um conjunto de transições
-struct TransitionsStructure {
-    TransitionStructure transitionStructure[MAX_TRANSITIONS];
-    int numberOfTransitions;
 };
 
 // estrutura de um único estado
 struct StateStructure {
     string stateName;
-    TransitionsStructure transitionsStructure;
+    TransitionStructure transitions[MAX_TRANSITIONS];
+    int numberOfTransitions;
 };
 
 // estrutura do conjunto de estados
@@ -55,4 +52,16 @@ struct AutomatonStructure {
     StatesStructure states;
     string initState;
     EndStatesStructure endStates;
+};
+
+// estrutura de um automômato em funvionamento
+struct AutomatonStatusStructure {
+    StateStructure thisState;
+    TransitionStructure transition;
+    string word;
+    string exitWord;
+    string stateName;
+    int transitionNumber;
+    int stateNumber;
+    int step;
 };

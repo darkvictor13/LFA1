@@ -1,17 +1,32 @@
 // este arquivo serve de ponto de entrada do programa
 
 // importando bibliotecas
-#include "libraries/interface_library.h"
+#include "libraries/functions_library.h"
 
 // ponto de entrada do programa
 int main(int argc, char **argv) {
-    //linha adicionada pelo victor, para dar merge
+
     string fileName;
-    if (argc == 1) {
+
+    if( argc == 1 ) {
         fileName = findNameFile();
-    }else if (argc == 2){
-        fileName = argv[1]; 
-    }else {
-        errorMensage();
+    }else if( argc == 2 ) {
+        fileName = argv[1];
+    }else{
+        errorMessagesCode( 0, "");
     }
+    
+    AutomatonStructure automaton;
+
+    welcomeMessage();
+
+    automaton = readInputFile(fileName);
+
+    printAutomaton(automaton);
+
+    enterWords(automaton);
+
+    printEndProgramMessage();
+
+    return 0;
 }
