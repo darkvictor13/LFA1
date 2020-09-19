@@ -2,6 +2,8 @@
 #define READ_STDIO
 
 #include "structures_library.h"
+#include "print_stdio.h"
+#include "read_file.h"
 
 /*
    este arquivo é responsável por definir todas as funções encarregadas de ler na saída padrão

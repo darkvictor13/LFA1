@@ -1,11 +1,12 @@
 // este arquivo serve de ponto de entrada do programa
 
 // importando bibliotecas
+#include "structures_library.h"
 #include "libraries/call_libs.h"
 #include "libraries/print_stdio.h"
 #include "libraries/automaton_controller.h"
-#include "libraries/read_file.h"
-#include "libraries/read_stdio.h"
+
+using namespace std;
 
 // ponto de entrada do programa
 int main(int argc, char **argv) {

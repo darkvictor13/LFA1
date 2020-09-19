@@ -1,5 +1,6 @@
 #include "automaton_controller.h"
 
+
 bool verifyValidEndState(EndStatesStructure endStatesStructure, string endState) {
     
     for (int  i = 0; i < endStatesStructure.numberOfEndStates; i++) {

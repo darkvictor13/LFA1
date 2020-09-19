@@ -2,6 +2,9 @@
 #define AUTOMATON_CONTROLLER
 
 #include "structures_library.h"
+#include "print_stdio.h"
+#include "read_file.h"
+#include "read_stdio.h"
 
 /*
    este arquivo contém as principais funções que simulam o ciclo de vida do autômato

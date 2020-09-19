@@ -4,6 +4,8 @@
 
 #include "call_libs.h"
 
+using namespace std;
+
 // estrutura de um determinado alfabeto
 struct AlphabetStructure {
     string alphabet;
