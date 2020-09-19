@@ -5,6 +5,43 @@
 #include "print_stdio.h"
 
 // função que escreve na saída padrão a mensagem de bem vindo ao programa
+
+// Imprime as mensagens que encerram o arquivo
+void errorMessagesCode(int code, string message) {
+
+    switch(code) {
+        case 0:
+            cout << "Você está usando o programa de forma errada!\n"
+                 << "Por favor rode:\n"
+                 << "[nome do programa] [nome do arquivo com os dados]\n";
+            break;
+        case 1:
+            cout << "Erro de formato: " << message << " não identificado." << endl;
+            break;
+        case 2:
+            cout << "Erro de formato: '=' separador não identificado." << endl;
+            break;
+        case 3:
+            cout << "Erro de formato: '{}' erro de fechamento de chaves." << endl;
+            break;
+        case 4:
+            cout << "Erro de formato: '(' não encontrado." << endl;
+            break;
+        case 5:
+            cout << "Erro de formato: ',' não encontrado." << endl;
+            break;
+        case 6:
+            cout << "Erro de formato: ')' não encontrado." << endl;
+            break;
+        case 7:
+            cout << "Erro de abertura de arquivo: arquivo não encontrado." << endl;
+            break;
+    }
+
+    exit(code);
+}
+
+
 void welcomeMessage() {
     
     cout << endl 

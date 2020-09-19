@@ -1,17 +1,8 @@
+#ifndef STRUCTURES
+#define STRUCTURES
 // este arquivo contem a definição de todas as estruturas utilizadas
 
-// definindo constantes
-#define MAX_STATES 50
-#define MAX_TRANSITIONS 50
-#define MIN_BLANK_SPACES 4 
-
-// importando bibliotecas
-#include <iostream>
-#include <fstream>
-#include <limits>
-#include <string>
-
-using namespace std;
+#include "call_libs.h"
 
 // estrutura de um determinado alfabeto
 struct AlphabetStructure {
@@ -65,3 +56,5 @@ struct AutomatonStatusStructure {
     int stateNumber;
     int step;
 };
+
+#endif

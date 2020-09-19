@@ -5,6 +5,9 @@
 
 // este arquivo é responsável por definir todas as funções encarregadas de imprimir na saída padrão
 
+// Imprime as mensagens que encerram o arquivo
+void errorMessagesCode(int code, string message);
+
 // função que escreve na saída padrão a mensagem de bem vindo ao programa
 void welcomeMessage();
 
