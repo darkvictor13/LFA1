@@ -244,3 +244,7 @@ void printExitConfirmationMessage() {
     cout << "Deseja finalizar o programa? [y/n] -> ";
 
 }
+
+void EnterWordMensage() {
+	cout << "Por favor insira uma palavra válida, ou [exit] para sair\n";
+}

@@ -64,4 +64,7 @@ void printEndProgramMessage();
 // função que imprime mensagem pedindo a confirmação do usuário para encerrar o programa
 void printExitConfirmationMessage();
 
+// função que imprime na tela mensagem sobre como entrar com a palavra
+void EnterWordMensage();
+
 #endif

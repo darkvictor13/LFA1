@@ -93,6 +93,7 @@ void enterWords(AutomatonStructure automaton) {
     
     string word;
     
+		cout << "-> ";
     word = removeStringSpaces( readWord() );
 
     while( preVerifyWord(word) ) {
@@ -123,6 +124,7 @@ void enterWords(AutomatonStructure automaton) {
             printWordInvalidMessage();
         }
 
+				cout << "-> ";
         word = removeStringSpaces( readWord() );
     }   
 }

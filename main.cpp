@@ -29,6 +29,8 @@ int main(int argc, char **argv) {
 
     printAutomaton(automaton);
 
+		EnterWordMensage();
+
     enterWords(automaton);
 
     printEndProgramMessage();
