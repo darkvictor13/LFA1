@@ -2,12 +2,12 @@
 #include "structures_library.h"
 
 //
-// segmento de código responsavél pela declaração dos erros
+// segmento de código responsável pela declaração dos erros
 //
 
-// função qeu imprime na saída estandor uma mensagem de biembenida para o usuário 
+// função que imprime na saída estandor uma mensagem de boas vindas para o usuário 
 void errorMessagesCode(int code, string message) {
-    
+
     switch(code) {
         case 0:
             cout << "Você está usando o programa de forma errada!\n"
@@ -41,10 +41,10 @@ void errorMessagesCode(int code, string message) {
 }
 
 //
-// este segmento de código á responsáel por definir todas as funções encarregadas de ler o arquivo de entrada
+// este segmento de código á responsável por definir todas as funções encarregadas de ler o arquivo de entrada
 //
 
-// função para retirar os espaços vacios de uma string, linha
+// função para retirar os espaços vazios de uma string, linha
 string removeStringSpaces(string line) {
 
     string newLine = "";
@@ -75,7 +75,7 @@ string findNameFile () {
         
         string aux = "";
 
-        cout << "O arquivo possui extenção? [y/n] -> ";
+        cout << "O arquivo possui extensão? [y/n] -> ";
 
         cin >> aux;
 
@@ -138,7 +138,7 @@ AlphabetStructure readOutputAlphabet(string line) {
 
     line = removeStringSpaces(line);
 
-    if( "alfabeto_saida" != line.substr(0, 14) ) {
+    if( "alfabeto_saída" != line.substr(0, 14) ) {
         errorMessagesCode( 1, line.substr(0, 14));
     }
     
@@ -336,7 +336,7 @@ int selectState(StatesStructure states, string stateName) {
     return -1;
 }
 
-// função que a partir de um carater de entrada retorna a posição da transição correspondente dentro do estado
+// função que a partir de um carácter de entrada retorna a posição da transição correspondente dentro do estado
 int selectTransition(StateStructure state, char inputLetter) {
     
     for (int thisTransition = 0; thisTransition < state.numberOfTransitions; thisTransition++) {
@@ -550,7 +550,7 @@ void printStateTransitions(StateStructure state) {
 // função que imprime na saída estandar todas as transições
 void printTransitions(StatesStructure states) {
     
-    cout << " -> transiçãoe:" << endl;
+    cout << " -> transição:" << endl;
 
     for(int i = 0; i < states.numberOfStates; i++) {
         printStateTransitions(states.states[i]);
@@ -584,7 +584,7 @@ void printAutomaton(AutomatonStructure automaton) {
 // função que imprime na saída estandar erro em caso da palavra de entrada conter carateres inválido para o autômato
 void printWordInvalidMessage() {
     
-    cout << "Palavra inválida: existem carateres que não pertencem ao alfabeto inicial do autômato." << endl << endl;
+    cout << "Palavra inválida: existem caráteres que não pertencem ao alfabeto inicial do autômato." << endl << endl;
 
 }
 
@@ -653,7 +653,7 @@ void printExitConfirmationMessage() {
 }
 
 //
-// este segmento de código é responsáel por definir todas as funções encarregadas de ler na saída estandar
+// este segmento de código é responsável por definir todas as funções encarregadas de ler na saída estandar
 //
 
 // função que realiza a leitura de uma palavra a ser testada no autômato a partir da entrada estandar
