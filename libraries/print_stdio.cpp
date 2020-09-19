@@ -1,8 +1,10 @@
-// este arquivo é responsáel por definir todas as funções encarregadas de imprimir na saída estandar
+/* 
+   este arquivo é responsável por definir todas as funções encarregadas de imprimir na saída padrão
+*/
 
 #include "print_stdio.h"
 
-// função que escreve na saída estandar a mensafem de bienvenida au programa
+// função que escreve na saída padrão a mensagem de bem vindo ao programa
 void welcomeMessage() {
     
     cout << endl 
@@ -14,7 +16,8 @@ void welcomeMessage() {
 
 }
 
-// função que imprime na saída estandar um alfabeto
+// função que imprime na saída padrão um alfabeto
+// parâmetros: O alfabeto inicializado pelo arquivo
 void printAlphabet(AlphabetStructure alphabet) {
 
     cout << alphabet.alphabet[0];
@@ -24,7 +27,8 @@ void printAlphabet(AlphabetStructure alphabet) {
     }
 }
 
-// função que imprime na saída estandar um alfabeto
+// função que imprime na saída padrão um alfabeto
+// parâmetros: O alfabeto inicializado pelo arquivo
 void printInputAlphabet(AlphabetStructure inputAlphabet) {
     
     cout << " -> alfabeto_entrada = { ";
@@ -34,17 +38,18 @@ void printInputAlphabet(AlphabetStructure inputAlphabet) {
     cout << " }" << endl;
 }
 
-// função que imprime na saída estandar um alfabeto
+// função que imprime na saída padrão um alfabeto
+// parâmetros: O alfabeto inicializado pelo arquivo
 void printOutputAlphabet(AlphabetStructure outputAlphabet) {
     
-    cout << " -> alfabeto_saida = { ";
+    cout << " -> alfabeto_saída = { ";
     
     printAlphabet(outputAlphabet);
     
     cout << " }" << endl;
 }
 
-// função que imprime na saída estandar os estados de um autômato
+// função que imprime na saída padrão os estados de um autômato
 void printStates(StatesStructure states) {
     
     cout << " -> estados = { ";
@@ -58,14 +63,14 @@ void printStates(StatesStructure states) {
     cout << " }" << endl;
 }
 
-// função que imprime na saída estandar o estado inicial de um autômato
+// função que imprime na saída padrão o estado inicial de um autômato
 void printInitState(string initState) {
     
     cout << " -> inicial = " << initState << endl;
 
 }
 
-// função que imprime na saída estandar os estados finais de um autômato
+// função que imprime na saída padrão os estados finais de um autômato
 void printEndStates(EndStatesStructure endStates) {
     
     cout << " -> finais = { ";
@@ -79,7 +84,7 @@ void printEndStates(EndStatesStructure endStates) {
     cout << " }" << endl;
 }
 
-// função que imprime na saída estandar o conjunto de transições de um dado estado
+// função que imprime na saída padrão o conjunto de transições de um dado estado
 void printStateTransitions(StateStructure state) {
     
     for(int i = 0; i < state.numberOfTransitions; i++) {
@@ -98,7 +103,7 @@ void printStateTransitions(StateStructure state) {
     }
 }
 
-// função que imprime na saída estandar todas as transições
+// função que imprime na saída padrão todas as transições
 void printTransitions(StatesStructure states) {
     
     cout << " -> transição:" << endl;
@@ -108,7 +113,7 @@ void printTransitions(StatesStructure states) {
     }
 }
 
-// função que imprime na saída estandar o autômato carregado apartir do arquivo inicial
+// função que imprime na saída padrão o autômato carregado a partir do arquivo inicial
 void printAutomaton(AutomatonStructure automaton) {
 
     cout << "--------------------" << endl
@@ -132,14 +137,14 @@ void printAutomaton(AutomatonStructure automaton) {
 
 }
 
-// função que imprime na saída estandar erro em caso da palavra de entrada conter carateres inválido para o autômato
+// função que imprime na saída padrão erro em caso da palavra de entrada conter carácteres inválido para o autômato
 void printWordInvalidMessage() {
     
     cout << "Palavra inválida: existem caráteres que não pertencem ao alfabeto inicial do autômato." << endl << endl;
 
 }
 
-// função que imprime o número de espaçõs em brancos necesssarios para completar a linha
+// função que imprime o número de espaços em brancos necessários para completar a linha
 void printBlankSpaces(int n) {
    
     for (int i = 0; i < n; i++) {
@@ -147,14 +152,14 @@ void printBlankSpaces(int n) {
     }
 }
 
-// função que imprime na saída estandar o inicio do ciclo de transição 
+// função que imprime na saída padrão o inicio do ciclo de transição 
 void printInitTransitionMessage(string stateName, string enterWord) {
    
     cout << endl << "[" << stateName << "]" << enterWord << endl;
 
 }
 
-// função que imprime na saída estandar o resultado de uma transição efetuada pelo autômato
+// função que imprime na saída padrão o resultado de uma transição efetuada pelo autômato
 void printTransitionMessage(string stateName, string word, string outputCharacters, int step) {
 
     cout << "[" << stateName << "]" << word;
@@ -164,14 +169,14 @@ void printTransitionMessage(string stateName, string word, string outputCharacte
     cout << "saída: " << outputCharacters << endl;
 }
 
-// função que imprime na saída estandar a mensagem que declara que a palavar é inválida
+// função que imprime na saída padrão a mensagem que declara que a palavra é inválida
 void printValidWord() {
 
     cout << "ACEITA" << endl;
 
 }
 
-// função que imprime na saída estandar a mensagem que declara que a palavar não é inválida
+// função que imprime na saída padrão a mensagem que declara que a palavra não é inválida
 void printInvalidWord() {
 
     cout << "REJEITA" << endl;
@@ -186,7 +191,7 @@ void printEndWordMessage(string word) {
 
 }
 
-// função que imprime a mensagem de fechamento do progama
+// função que imprime a mensagem de fechamento do programa
 void printEndProgramMessage() {
 
     cout << endl 

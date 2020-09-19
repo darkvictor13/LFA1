@@ -29,7 +29,7 @@ string findNameFile () {
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(),'\n');
 
-    if ( fileName.find('.') == - 1 ) {
+    if ( (int)fileName.find('.') == - 1 ) {
         
         string aux = "";
 

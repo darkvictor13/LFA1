@@ -1,5 +1,5 @@
-#ifndef read_file 
-#define read_file
+#ifndef READ_FILE 
+#define READ_FILE
 
 #include "structures_library.h"
 
