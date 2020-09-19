@@ -75,14 +75,14 @@ string findNameFile () {
         
         string aux = "";
 
-        cout << "O arquivo possui extenção? [Y/n] -> ";
+        cout << "O arquivo possui extenção? [y/n] -> ";
 
-        aux[0] = getchar();
+        cin >> aux;
 
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(),'\n');
 
-        if( aux[0] == '\n' || aux[0] == 'Y' || aux[0] == 'y' ) {  
+        if( aux[0] == 'Y' || aux[0] == 'y' ) {  
 
             cout << "Entre a extensão do arquivo -> ";
 
@@ -686,12 +686,16 @@ bool readExitConfirmationMessage() {
 // este segmento de código contem as principais funções que simulam o ciclo de vida do autômato
 //
 
-// função que verifica se um determinado estado do autômato é válido
-bool verifyValidState() {
+// função que verifica se um determinado estado é estado final do autômato
+bool verifyValidEndState(EndStatesStructure endStatesStructure, string endState) {
+    
+    for (int  i = 0; i < endStatesStructure.numberOfEndStates; i++) {
+        if( endStatesStructure.states[i] == endState ) {
+            return 1;
+        }
+    }
 
-    bool boolean = 1;
-
-    return boolean;
+    return 0;
 }
 
 // função que realiza uma dada transição do autômato definido no arquivo de entrada
@@ -720,7 +724,7 @@ AutomatonStatusStructure makeTransition(AutomatonStatusStructure runningAutomato
 
     printTransitionMessage(runningAutomaton.stateName, runningAutomaton.word, runningAutomaton.transition.outputCharacters, runningAutomaton.step);
 
-    if( runningAutomaton.word.size() == 0 || runningAutomaton.transitionNumber < 0 || !verifyValidState() ) {
+    if( runningAutomaton.word.size() == 0 || runningAutomaton.transitionNumber < 0 ) {
         return runningAutomaton;
     }
     
@@ -762,7 +766,7 @@ void runAutomaton(AutomatonStatusStructure runningAutomaton, AutomatonStructure 
     
     runningAutomaton = makeTransition(runningAutomaton, automaton);
 
-    if( runningAutomaton.transitionNumber != - 1 ) {
+    if( runningAutomaton.transitionNumber != - 1 && verifyValidEndState(automaton.endStates, runningAutomaton.thisState.stateName ) ) {
         printValidWord();
     }else{
         printInvalidWord();
@@ -780,6 +784,16 @@ void enterWords(AutomatonStructure automaton) {
     word = removeStringSpaces( readWord() );
 
     while( preVerifyWord(word) ) {
+
+        /*if( word == "@" ) {
+            if( verifyValidEndState(automaton.endStates, automaton.initState ) ) {
+                printValidWord();
+            }else{
+                printInvalidWord();
+            }
+            word = removeStringSpaces( readWord() );
+            continue;
+        }*/
         
         if( verifyWordIfInAlphabet(automaton.inputAlphabet, word) ) {
             
