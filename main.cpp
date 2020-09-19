@@ -1,7 +1,7 @@
 // este arquivo serve de ponto de entrada do programa
 
 // importando bibliotecas
-#include "structures_library.h"
+#include "libraries/structures_library.h"
 #include "libraries/call_libs.h"
 #include "libraries/print_stdio.h"
 #include "libraries/automaton_controller.h"

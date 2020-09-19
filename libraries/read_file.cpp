@@ -96,7 +96,7 @@ AlphabetStructure readOutputAlphabet(string line) {
 
     line = removeStringSpaces(line);
 
-    if( "alfabeto_saída" != line.substr(0, 14) ) {
+    if( "alfabeto_saída" != line.substr(0, 14)  && "alfabeto_saida" != line.substr(0, 14)) {
         errorMessagesCode( 1, line.substr(0, 14));
     }
     

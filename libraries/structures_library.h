@@ -47,7 +47,7 @@ struct AutomatonStructure {
     EndStatesStructure endStates;
 };
 
-// estrutura de um automômato em funvionamento
+// estrutura de um autômato em funcionamento
 struct AutomatonStatusStructure {
     StateStructure thisState;
     TransitionStructure transition;
