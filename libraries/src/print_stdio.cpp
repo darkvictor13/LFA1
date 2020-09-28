@@ -2,7 +2,7 @@
    este arquivo é responsável por definir todas as funções encarregadas de imprimir na saída padrão
 */
 
-#include "print_stdio.h"
+#include "../includes/print_stdio.h"
 
 // função que escreve na saída padrão a mensagem de bem vindo ao programa
 

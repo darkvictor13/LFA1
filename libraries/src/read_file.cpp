@@ -1,6 +1,6 @@
 // este segmento de código á responsável por definir todas as funções encarregadas de ler o arquivo de entrada
 
-#include "read_file.h"
+#include "../includes/read_file.h"
 
 // função para retirar os espaços vazios de uma string, linha
 string removeStringSpaces(string line) {
