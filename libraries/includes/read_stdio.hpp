@@ -1,9 +1,9 @@
 #ifndef READ_STDIO
 #define READ_STDIO
 
-#include "../includes/structures_library.h"
-#include "../includes/print_stdio.h"
-#include "../includes/read_file.h"
+#include "structures_library.hpp"
+#include "print_stdio.hpp"
+#include "read_file.hpp"
 
 /*
    este arquivo é responsável por definir todas as funções encarregadas de ler na saída padrão
