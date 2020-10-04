@@ -1,7 +1,7 @@
 #ifndef PRINT_STDIO 
 #define PRINT_STDIO
 
-#include "../includes/structures_library.h"
+#include "structures_library.hpp"
 
 // este arquivo é responsável por definir todas as funções encarregadas de imprimir na saída padrão
 

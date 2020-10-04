@@ -1,10 +1,10 @@
 // este arquivo serve de ponto de entrada do programa
 
 // importando bibliotecas
-#include "libraries/includes/structures_library.h"
-#include "libraries/includes/call_libs.h"
-#include "libraries/includes/print_stdio.h"
-#include "libraries/includes/automaton_controller.h"
+#include "libraries/includes/structures_library.hpp"
+#include "libraries/includes/call_libs.hpp"
+#include "libraries/includes/print_stdio.hpp"
+#include "libraries/includes/automaton_controller.hpp"
 
 using namespace std;
 

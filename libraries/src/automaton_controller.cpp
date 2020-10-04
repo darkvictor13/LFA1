@@ -1,4 +1,4 @@
-#include "../includes/automaton_controller.h"
+#include "../includes/automaton_controller.hpp"
 
 
 bool verifyValidEndState(EndStatesStructure endStatesStructure, string endState) {

@@ -1,10 +1,10 @@
 #ifndef AUTOMATON_CONTROLLER
 #define AUTOMATON_CONTROLLER
 
-#include "../includes/structures_library.h"
-#include "../includes/print_stdio.h"
-#include "../includes/read_file.h"
-#include "../includes/read_stdio.h"
+#include "structures_library.hpp"
+#include "print_stdio.hpp"
+#include "read_file.hpp"
+#include "read_stdio.hpp"
 
 /*
    este arquivo contém as principais funções que simulam o ciclo de vida do autômato

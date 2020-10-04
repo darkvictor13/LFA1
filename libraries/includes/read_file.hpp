@@ -1,8 +1,8 @@
 #ifndef READ_FILE 
 #define READ_FILE
 
-#include "structures_library.h"
-#include "print_stdio.h"
+#include "structures_library.hpp"
+#include "print_stdio.hpp"
 
 // este arquivo é responsável por definir todas as funções encarregadas de ler o arquivo de entrada
 
