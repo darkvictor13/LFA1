@@ -23,6 +23,8 @@ int main(int argc, char **argv) {
     
     AutomatonStructure automaton;
 
+	automaton = initialize();
+
     welcomeMessage();
 
     automaton = readInputFile(fileName);

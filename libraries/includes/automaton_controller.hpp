@@ -10,6 +10,18 @@
    este arquivo contém as principais funções que simulam o ciclo de vida do autômato
 */
 
+AlphabetStructure initializeAlphabet ();
+
+TransitionStructure initializeTransition ();
+
+StateStructure initializeState ();
+
+StatesStructure initializeStates ();
+
+EndStatesStructure initializeEndStates ();
+
+AutomatonStructure initialize ();
+
 // função que verifica se um determinado estado é estado final do autômato
 bool verifyValidEndState(EndStatesStructure endStatesStructure, string endState);
 
