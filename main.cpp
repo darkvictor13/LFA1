@@ -5,20 +5,22 @@
 #include "libraries/includes/call_libs.hpp"
 #include "libraries/includes/print_stdio.hpp"
 #include "libraries/includes/automaton_controller.hpp"
+#include "libraries/includes/initialization.hpp"
+
 
 using namespace std;
 
 // ponto de entrada do programa
 int main(int argc, char **argv) {
 
-    string fileName;
+	string fileName;
 
-    if( argc == 1 ) {
-        fileName = findNameFile();
+	if( argc == 1 ) {
+		fileName = findNameFile();
     }else if( argc == 2 ) {
-        fileName = argv[1];
+		fileName = argv[1];
     }else{
-        errorMessagesCode( 0, "");
+		errorMessagesCode( 0, "");
     }
     
     AutomatonStructure automaton;
@@ -29,9 +31,9 @@ int main(int argc, char **argv) {
 
     automaton = readInputFile(fileName);
 
-    printAutomaton(automaton);
+	printAutomaton(automaton);
 
-		EnterWordMensage();
+	EnterWordMensage();
 
     enterWords(automaton);
 
