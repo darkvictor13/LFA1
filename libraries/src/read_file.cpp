@@ -21,7 +21,7 @@ string findNameFile () {
 
     string fileName;
 
-    cout << "Você não informou o nome do arquivo contendo os dados\n";
+    cout << "Voce nao informou o nome do arquivo contendo os dados\n";
     cout << "Por favor insira o nome arquivo -> ";
     
     cin >> fileName;
@@ -33,7 +33,7 @@ string findNameFile () {
         
         string aux = "";
 
-        cout << "O arquivo possui extensão? [y/n] -> ";
+        cout << "O arquivo possui extensao? [y/n] -> ";
 
         cin >> aux;
 
@@ -42,7 +42,7 @@ string findNameFile () {
 
         if( aux[0] == 'Y' || aux[0] == 'y' ) {  
 
-            cout << "Entre a extensão do arquivo -> ";
+            cout << "Entre a extensao do arquivo -> ";
 
             cin >> aux;
 
