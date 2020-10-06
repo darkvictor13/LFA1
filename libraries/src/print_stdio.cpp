@@ -177,7 +177,7 @@ void printAutomaton(AutomatonStructure automaton) {
 // função que imprime na saida padrão erro em caso da palavra de entrada conter carácteres inválido para o autômato
 void printWordInvalidMessage() {
     
-    cout << "Palavra invalida: existem carateres que nao pertencem ao alfabeto inicial do automato." << endl << endl;
+    cout << "Palavra invalida: existem caracteres que nao pertencem ao alfabeto inicial do automato." << endl << endl;
 
 }
 
