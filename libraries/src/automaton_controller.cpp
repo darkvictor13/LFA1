@@ -90,9 +90,9 @@ void runAutomaton(AutomatonStatusStructure runningAutomaton, AutomatonStructure 
 // função que permite a entrada varias palavras pelo usuário
 void enterWords(AutomatonStructure automaton) {
     
-    string word;
+    string word = "";
     
-		cout << "-> ";
+	cout << "-> ";
     word = removeStringSpaces( readWord() );
 
     while( preVerifyWord(word) ) {
@@ -109,7 +109,7 @@ void enterWords(AutomatonStructure automaton) {
         
         if( verifyWordIfInAlphabet(automaton.inputAlphabet, word) ) {
             
-            AutomatonStatusStructure runningAutomaton;
+            AutomatonStatusStructure runningAutomaton = initializeAutomatonController();
 
             runningAutomaton.word = word;
             runningAutomaton.stateNumber = selectState(automaton.states, automaton.initState);

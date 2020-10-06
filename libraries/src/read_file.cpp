@@ -19,7 +19,7 @@ string removeStringSpaces(string line) {
 // função que pergunta ao usuário o nome do arquivo
 string findNameFile () {
 
-    string fileName;
+    string fileName = "";
 
     cout << "Voce nao informou o nome do arquivo contendo os dados\n";
     cout << "Por favor insira o nome arquivo -> ";
@@ -60,7 +60,7 @@ string findNameFile () {
 // função que realiza a leitura do alfabeto de entrada a partir do arquivo entrada
 AlphabetStructure readInputAlphabet(string line) {
     
-    AlphabetStructure alphabet;
+    AlphabetStructure alphabet = initializeAlphabet();
 
     line = removeStringSpaces(line);
 
@@ -92,7 +92,7 @@ AlphabetStructure readInputAlphabet(string line) {
 // função que realiza a leitura do alfabeto de saída a partir do arquivo entrada
 AlphabetStructure readOutputAlphabet(string line) {
     
-    AlphabetStructure alphabet;
+    AlphabetStructure alphabet = initializeAlphabet();
 
     line = removeStringSpaces(line);
 
@@ -124,7 +124,7 @@ AlphabetStructure readOutputAlphabet(string line) {
 // função que realiza a leitura dos estados possíveis a partir do arquivo entrada
 StatesStructure readStates(string line) {
     
-    StatesStructure states;
+    StatesStructure states = initializeStates();
 
     line = removeStringSpaces(line);
 
@@ -159,7 +159,7 @@ StatesStructure readStates(string line) {
 // função que realiza a leitura estado inicial a partir do arquivo de entrada
 string readInitState(string line) {
     
-    string initState;
+    string initState = "";
 
     line = removeStringSpaces(line);
 
@@ -179,7 +179,7 @@ string readInitState(string line) {
 // função que realiza a leitura estado final a partir do arquivo de entrada
 EndStatesStructure readEndStates(string line) {
     
-    EndStatesStructure endStates;
+    EndStatesStructure endStates = initializeEndStates();
 
     line = removeStringSpaces(line);
 
@@ -213,6 +213,7 @@ EndStatesStructure readEndStates(string line) {
 
 // função que verifica se uma linha de transição esta formatada da forma correta
 void verifyTransitionLine(string line) {
+    
     int position = 0;
     int stringLengh = line.size();
     char verifyChar;
@@ -309,7 +310,7 @@ int selectTransition(StateStructure state, char inputLetter) {
 // função que realiza a leitura de uma transição a partir do arquivo de entrada
 TransitionStructure readTransition(string line) {
     
-    TransitionStructure transition;
+    TransitionStructure transition = initializeTransition();
     int position;
     int endPosition;
 
@@ -335,10 +336,10 @@ TransitionStructure readTransition(string line) {
 // função que realiza a leitura de um conjunto de transições a partir do arquivo de entrada
 StatesStructure readTransitions(StatesStructure states, ifstream* inputFile) {
     
-    string line;
-    string stateName;
-    int stateNumber;
-    int position;
+    string line = "";
+    string stateName = "";
+    int stateNumber = 0;
+    int position = 0;
 
     while( !( (*inputFile).eof() ) ) {
 
@@ -363,8 +364,8 @@ StatesStructure readTransitions(StatesStructure states, ifstream* inputFile) {
 // função que realiza a leitura do arquivo de entrada
 AutomatonStructure readAutomaton(ifstream* inputFile) {
     
-    AutomatonStructure automaton;
-    string line;
+    AutomatonStructure automaton = initialize();
+    string line = "";
     
     getline(*inputFile, line);
     automaton.inputAlphabet = readInputAlphabet(line);
@@ -389,7 +390,7 @@ AutomatonStructure readAutomaton(ifstream* inputFile) {
 // função que realiza o manejo do arquivo de entrada
 AutomatonStructure readInputFile(string fileName) {
     
-    AutomatonStructure automaton;
+    AutomatonStructure automaton = initialize();
     ifstream inputFile;
 
     inputFile.open(fileName);

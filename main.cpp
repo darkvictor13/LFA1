@@ -7,37 +7,38 @@
 #include "libraries/includes/automaton_controller.hpp"
 #include "libraries/includes/initialization.hpp"
 
-
 using namespace std;
 
 // ponto de entrada do programa
 int main(int argc, char **argv) {
 
-	string fileName;
+  string fileName;
 
-	if( argc == 1 ) {
-		fileName = findNameFile();
-    }else if( argc == 2 ) {
-		fileName = argv[1];
-    }else{
-		errorMessagesCode( 0, "");
-    }
-    
-    AutomatonStructure automaton;
+  if (argc == 1) {
+    fileName = findNameFile();
+  }
+  else if (argc == 2) {
+    fileName = argv[1];
+  }
+  else {
+    errorMessagesCode(0, "");
+  }
 
-	automaton = initialize();
+  AutomatonStructure automaton;
 
-    welcomeMessage();
+  automaton = initialize();
 
-    automaton = readInputFile(fileName);
+  welcomeMessage();
 
-	printAutomaton(automaton);
+  automaton = readInputFile(fileName);
 
-	EnterWordMensage();
+  printAutomaton(automaton);
 
-    enterWords(automaton);
+  EnterWordMensage();
 
-    printEndProgramMessage();
+  enterWords(automaton);
 
-    return 0;
+  printEndProgramMessage();
+
+  return 0;
 }

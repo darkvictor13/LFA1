@@ -53,4 +53,15 @@ AutomatonStructure initialize () {
 	return aux;
 }
 
-
+AutomatonStatusStructure initializeAutomatonController () {
+	AutomatonStatusStructure aux;
+	aux.thisState = initializeState();
+	aux.transition = initializeTransition();
+	aux.word = "";
+	aux.exitWord = "";
+	aux.stateName = "";
+	aux.transitionNumber = 0;
+	aux.stateNumber = 0;
+	aux.step = 0;
+	return aux;
+}

@@ -7,7 +7,7 @@
 // função que realiza a leitura de uma palavra a ser testada no autômato a partir da entrada padrão
 string readWord() {
 
-    string word;
+    string word = "";
 
     cin >> word;
 
@@ -17,7 +17,7 @@ string readWord() {
 // função que realiza a leitura da palavra que confirma a saída do programa
 bool readExitConfirmationMessage() {
 
-    string line;
+    string line = "";
     bool boolean = 1;
 
     cin >> line;

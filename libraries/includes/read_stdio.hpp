@@ -2,6 +2,7 @@
 #define READ_STDIO
 
 #include "structures_library.hpp"
+#include "initialization.hpp"
 #include "print_stdio.hpp"
 #include "read_file.hpp"
 

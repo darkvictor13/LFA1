@@ -2,6 +2,7 @@
 #define READ_FILE
 
 #include "structures_library.hpp"
+#include "initialization.hpp"
 #include "print_stdio.hpp"
 
 // este arquivo é responsável por definir todas as funções encarregadas de ler o arquivo de entrada

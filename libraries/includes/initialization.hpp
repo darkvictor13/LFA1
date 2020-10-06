@@ -15,4 +15,6 @@ EndStatesStructure initializeEndStates ();
 
 AutomatonStructure initialize ();
 
+AutomatonStatusStructure initializeAutomatonController ();
+
 #endif
