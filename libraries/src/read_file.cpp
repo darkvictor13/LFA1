@@ -3,6 +3,8 @@
 #include "../includes/read_file.hpp"
 
 // função para retirar os espaços vazios de uma string, linha
+// parâmetro (string) line - uma linha linha lida através de getline, seja do arquivo ou do teclado
+// retorna uma (string) que não contem nenhum espaço em branco
 string removeStringSpaces(string line) {
 
     string newLine = "";
@@ -18,6 +20,8 @@ string removeStringSpaces(string line) {
 }
 
 // função que pergunta ao usuário o nome do arquivo
+// parâmetros - vazio
+// return (string) - contendo o nome ou caminho do arquivo a ser aberto
 string findNameFile () {
 
     string fileName = "";
@@ -59,6 +63,8 @@ string findNameFile () {
 }
 
 // função que realiza a leitura do alfabeto de entrada a partir do arquivo entrada
+// parâmetro (string) - linha lida do arquivo a qual contém o alfabeto de entrada
+// return (AlphabetStructure) - contendo a estrutura alfabeto de entrada preenchida
 AlphabetStructure readInputAlphabet(string line) {
     
     AlphabetStructure alphabet = initializeAlphabet();
@@ -91,6 +97,8 @@ AlphabetStructure readInputAlphabet(string line) {
 }
 
 // função que realiza a leitura do alfabeto de saída a partir do arquivo entrada
+// parâmetro (string) - linha lida do arquivo a qual contém o alfabeto de saída
+// return (AlphabetStructure) - contendo a estrutura alfabeto de saída preenchida
 AlphabetStructure readOutputAlphabet(string line) {
     
     AlphabetStructure alphabet = initializeAlphabet();
@@ -123,6 +131,8 @@ AlphabetStructure readOutputAlphabet(string line) {
 }
 
 // função que realiza a leitura dos estados possíveis a partir do arquivo entrada
+// parâmetro (string) - linha lida do arquivo a qual contém todos os estados que o automato possui
+// return (StateStructure) - contendo todos os estados que o automato possui
 StatesStructure readStates(string line) {
     
     StatesStructure states = initializeStates();
@@ -158,6 +168,8 @@ StatesStructure readStates(string line) {
 }
 
 // função que realiza a leitura estado inicial a partir do arquivo de entrada
+// parâmetro (string) - linha lida do arquivo a qual contém o estado inicial do automato
+// return (string) - contendo o estado inicial do automato
 string readInitState(string line) {
     
     string initState = "";
@@ -178,6 +190,8 @@ string readInitState(string line) {
 }
 
 // função que realiza a leitura estado final a partir do arquivo de entrada
+// parâmetro (string) - linha lida do arquivo a qual contém os estados finais do automato
+// return (EndStatesStructure) - contendo os estados finais do automato
 EndStatesStructure readEndStates(string line) {
     
     EndStatesStructure endStates = initializeEndStates();
@@ -309,6 +323,8 @@ int selectTransition(StateStructure state, char inputLetter) {
 }
 
 // função que realiza a leitura de uma transição a partir do arquivo de entrada
+// parâmetro (string) - linha lida do arquivo a qual contém os estados finais do automato
+// return (TransitionStructure) - Uma transição
 TransitionStructure readTransition(string line) {
     
     TransitionStructure transition = initializeTransition();
@@ -335,6 +351,10 @@ TransitionStructure readTransition(string line) {
 }
 
 // função que realiza a leitura de um conjunto de transições a partir do arquivo de entrada
+// parâmetro (ifstream *) - ponteiro que aponta para o arquivo aberto
+// parâmetro (StateStructure) - Estrutura com todos os estados do automato
+
+// return (StatesStructure) - Não sei
 StatesStructure readTransitions(StatesStructure states, ifstream* inputFile) {
     
     string line = "";
@@ -367,6 +387,9 @@ StatesStructure readTransitions(StatesStructure states, ifstream* inputFile) {
 }
 
 // função que realiza a leitura do arquivo de entrada
+// parâmetro (ifstream *) - ponteiro que aponta para o arquivo aberto
+// return (AutomatonStructure) - Retorna o automato completo preenchido pelos dados do arquivo
+// pré-condição: ter um arquivo válido aberto
 AutomatonStructure readAutomaton(ifstream* inputFile) {
     
     AutomatonStructure automaton = initialize();
@@ -393,6 +416,8 @@ AutomatonStructure readAutomaton(ifstream* inputFile) {
 }
 
 // função que realiza o manejo do arquivo de entrada
+// parâmetro (string) fileName - Nome ou caminho do arquivo a ser aberto
+// return (AutomatonStructure) - Retorna o automato completo preenchido pelos dados do arquivo
 AutomatonStructure readInputFile(string fileName) {
     
     AutomatonStructure automaton = initialize();
@@ -401,6 +426,7 @@ AutomatonStructure readInputFile(string fileName) {
     inputFile.open(fileName);
 
     if( !inputFile.is_open() ) {
+			// encerra o programa caso não consiga abrir o arquivo
         errorMessagesCode( 7, "");
     }
 
