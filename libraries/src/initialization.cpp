@@ -1,5 +1,8 @@
+// Esse segmento de código é resposanvel pela inicialização das estruturas utilizadas.
+
 #include "../includes/initialization.hpp"
 
+// Função que inicializa a estrutura de um determinado Alfabeto
 AlphabetStructure initializeAlphabet () {
 	AlphabetStructure aux;
 	aux.alphabet = "";
@@ -7,6 +10,7 @@ AlphabetStructure initializeAlphabet () {
 	return aux;
 }
 
+// Função que inicializa a estrutura de uma unica transição
 TransitionStructure initializeTransition () {
 	TransitionStructure aux;
 	aux.endTransition = "";
@@ -15,6 +19,7 @@ TransitionStructure initializeTransition () {
 	return aux;
 }
 
+// Função que inicializa a estrutura de um unico estado
 StateStructure initializeState () {
 	StateStructure aux;
 	aux.numberOfTransitions = 0;
@@ -25,6 +30,7 @@ StateStructure initializeState () {
 	return aux;
 }
 
+// Função que inicializa a estrutura que representa os conjuntos de estados
 StatesStructure initializeStates () {
 	StatesStructure aux;
 	aux.numberOfStates = 0;
@@ -34,6 +40,7 @@ StatesStructure initializeStates () {
 	return aux;
 }
 
+// Função que inicializa a estrutura da lista de estados finais
 EndStatesStructure initializeEndStates () {
 	EndStatesStructure aux;
 	aux.numberOfEndStates = 0;
@@ -43,6 +50,7 @@ EndStatesStructure initializeEndStates () {
 	return aux;
 }
 
+// Função que inicializa a estrutura de um autômato
 AutomatonStructure initialize () {
 	AutomatonStructure aux;
 	aux.initState = "";
@@ -53,6 +61,7 @@ AutomatonStructure initialize () {
 	return aux;
 }
 
+// Função que inicializa a estrutura que representa um autômato em funcionamento
 AutomatonStatusStructure initializeAutomatonController () {
 	AutomatonStatusStructure aux;
 	aux.thisState = initializeState();
