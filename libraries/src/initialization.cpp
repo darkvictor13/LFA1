@@ -2,9 +2,10 @@
 
 #include "../includes/initialization.hpp"
 
-/* Função que inicializa a estrutura de um determinado Alfabeto
-parâmetro (void) - sem parâmetros
-return AlphabetStructure inicializada
+/* 
+	Função que inicializa a estrutura de um determinado Alfabeto
+	parâmetro (void) - sem parâmetros
+	return AlphabetStructure inicializada
 */
 AlphabetStructure initializeAlphabet () {
 	AlphabetStructure aux;
@@ -13,9 +14,10 @@ AlphabetStructure initializeAlphabet () {
 	return aux;
 }
 
-/* Função que inicializa a estrutura de uma unica transição
-parâmetro (void) - sem parâmetros
-return TransitionStructure inicializada
+/* 
+	Função que inicializa a estrutura de uma unica transição
+	parâmetro (void) - sem parâmetros
+	return TransitionStructure inicializada
 */
 TransitionStructure initializeTransition () {
 	TransitionStructure aux;
@@ -25,9 +27,10 @@ TransitionStructure initializeTransition () {
 	return aux;
 }
 
-/* Função que inicializa a estrutura de um unico estado
-parâmetro (void) - sem parâmetros
-return StateStructure inicializada
+/* 
+	Função que inicializa a estrutura de um unico estado
+	parâmetro (void) - sem parâmetros
+	return StateStructure inicializada
 */
 StateStructure initializeState () {
 	StateStructure aux;
@@ -39,9 +42,10 @@ StateStructure initializeState () {
 	return aux;
 }
 
-/* Função que inicializa a estrutura que representa os conjuntos de estados
-parâmetro (void) - sem parâmetros
-return StatesStructure inicializada
+/* 
+	Função que inicializa a estrutura que representa os conjuntos de estados
+	parâmetro (void) - sem parâmetros
+	return StatesStructure inicializada
 */
 StatesStructure initializeStates () {
 	StatesStructure aux;
@@ -52,9 +56,10 @@ StatesStructure initializeStates () {
 	return aux;
 }
 
-/* Função que inicializa a estrutura da lista de estados finais
-parâmetro (void) - sem parâmetros
-return EndStatesStructure inicializada
+/* 
+	Função que inicializa a estrutura da lista de estados finais
+	parâmetro (void) - sem parâmetros
+	return EndStatesStructure inicializada
 */
 EndStatesStructure initializeEndStates () {
 	EndStatesStructure aux;
@@ -65,9 +70,10 @@ EndStatesStructure initializeEndStates () {
 	return aux;
 }
 
-/* Função que inicializa a estrutura de um autômato
-parâmetro (void) - sem parâmetros
-return AutomatonStructure inicializada
+/* 
+	Função que inicializa a estrutura de um autômato
+	parâmetro (void) - sem parâmetros
+	return AutomatonStructure inicializada
 */
 AutomatonStructure initialize () {
 	AutomatonStructure aux;
@@ -79,9 +85,10 @@ AutomatonStructure initialize () {
 	return aux;
 }
 
-/* Função que inicializa a estrutura que representa um autômato em funcionamento
-parâmetro (void) - sem parâmetros
-return AutomatonStatusStructure inicializada
+/* 
+	Função que inicializa a estrutura que representa um autômato em funcionamento
+	parâmetro (void) - sem parâmetros
+	return AutomatonStatusStructure inicializada
 */
 AutomatonStatusStructure initializeAutomatonController () {
 	AutomatonStatusStructure aux;
