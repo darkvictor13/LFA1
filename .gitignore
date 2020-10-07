@@ -1,0 +1,7 @@
+#Clion
+.idea/
+#cmake
+cmake-build-debug-mingw/
+cmake-build-debug-wsl/
+cmake-build-debug/
+CMakeLists.txt
