@@ -2,9 +2,11 @@
 
 #include "../includes/read_file.hpp"
 
-// função para retirar os espaços vazios de uma string, linha
-// parâmetro (string) line - uma linha linha lida através de getline, seja do arquivo ou do teclado
-// retorna uma (string) que não contem nenhum espaço em branco
+/*
+    função para retirar os espaços vazios de uma string linha
+    parâmetro (string) - cadeia de caracteres lida através de getline, seja do arquivo ou do teclado
+    retorna (string) - cadeia de caracteres sem espaços em branco
+*/
 string removeStringSpaces(string line) {
 
     string newLine = "";
@@ -19,9 +21,11 @@ string removeStringSpaces(string line) {
     return newLine;
 }
 
-// função que pergunta ao usuário o nome do arquivo
-// parâmetros - vazio
-// return (string) - contendo o nome ou caminho do arquivo a ser aberto
+/*
+    função que pergunta ao usuário o nome do arquivo
+    parâmetros (void)
+    return (string) - cadeia de caracteres contendo o nome ou caminho do arquivo a ser aberto
+*/
 string findNameFile () {
 
     string fileName = "";
@@ -62,9 +66,11 @@ string findNameFile () {
     return fileName;
 }
 
-// função que realiza a leitura do alfabeto de entrada a partir do arquivo entrada
-// parâmetro (string) - linha lida do arquivo a qual contém o alfabeto de entrada
-// return (AlphabetStructure) - contendo a estrutura alfabeto de entrada preenchida
+/*
+    função que realiza a leitura do alfabeto de entrada a partir do arquivo entrada
+    parâmetro (string) - cadeia de caracteres lida do arquivo a qual contém o alfabeto de entrada
+    return (AlphabetStructure) - estrutura de um alfabeto de entrada preenchido a partir do arquivo 
+*/
 AlphabetStructure readInputAlphabet(string line) {
     
     AlphabetStructure alphabet = initializeAlphabet();
@@ -96,9 +102,11 @@ AlphabetStructure readInputAlphabet(string line) {
     return alphabet;
 }
 
-// função que realiza a leitura do alfabeto de saída a partir do arquivo entrada
-// parâmetro (string) - linha lida do arquivo a qual contém o alfabeto de saída
-// return (AlphabetStructure) - contendo a estrutura alfabeto de saída preenchida
+/*
+    função que realiza a leitura do alfabeto de saída a partir do arquivo entrada
+    parâmetro (string) - cadeia de caracteres lida do arquivo a qual contém o alfabeto de saída
+    return (AlphabetStructure) - contendo a estrutura alfabeto de saída preenchida a partir do arquivo
+*/
 AlphabetStructure readOutputAlphabet(string line) {
     
     AlphabetStructure alphabet = initializeAlphabet();
@@ -130,9 +138,11 @@ AlphabetStructure readOutputAlphabet(string line) {
     return alphabet;
 }
 
-// função que realiza a leitura dos estados possíveis a partir do arquivo entrada
-// parâmetro (string) - linha lida do arquivo a qual contém todos os estados que o automato possui
-// return (StateStructure) - contendo todos os estados que o automato possui
+/*
+    função que realiza a leitura dos estados possíveis a partir do arquivo entrada
+    parâmetro (string) - cadeia de caracteres lida do arquivo a qual contém todos os estados que o automato possui
+    return (StateStructure) - estrutura de estados contendo todos os estados que o automato possui
+*/
 StatesStructure readStates(string line) {
     
     StatesStructure states = initializeStates();
@@ -167,9 +177,11 @@ StatesStructure readStates(string line) {
     return states;
 }
 
-// função que realiza a leitura estado inicial a partir do arquivo de entrada
-// parâmetro (string) - linha lida do arquivo a qual contém o estado inicial do automato
-// return (string) - contendo o estado inicial do automato
+/*
+    função que realiza a leitura estado inicial a partir do arquivo de entrada
+    parâmetro (string) - cadeia de caracteres lida do arquivo a qual contém o estado inicial do automato
+    return (string) - cadeia de caracteres contendo o estado inicial do autômato
+*/
 string readInitState(string line) {
     
     string initState = "";
@@ -189,9 +201,11 @@ string readInitState(string line) {
     return initState;
 }
 
-// função que realiza a leitura estado final a partir do arquivo de entrada
-// parâmetro (string) - linha lida do arquivo a qual contém os estados finais do automato
-// return (EndStatesStructure) - contendo os estados finais do automato
+/*
+    função que realiza a leitura estado final a partir do arquivo de entrada
+    parâmetro (string) - cadeia de caracteres lida do arquivo a qual contém os estados finais do automato
+    return (EndStatesStructure) - contendo os estados finais do automato
+*/
 EndStatesStructure readEndStates(string line) {
     
     EndStatesStructure endStates = initializeEndStates();
@@ -226,7 +240,11 @@ EndStatesStructure readEndStates(string line) {
     return endStates;
 }
 
-// função que verifica se uma linha de transição esta formatada da forma correta
+/*
+    função que verifica se uma cadeia de caracteres de transição esta formatada da forma correta
+    parâmetro (string) - cadeia de caracteres lida do arquivo a qual contém uma transição se estados
+    return (void)
+*/
 void verifyTransitionLine(string line) {
     
     int position = 0;
@@ -298,7 +316,12 @@ void verifyTransitionLine(string line) {
     }
 }
 
-// função que a partir da linha do arquivo que declara uma transição retorna a posição do estado inicial
+/*
+    função que a partir da cadeia de caracteres do arquivo que declara uma transição retorna a posição do estado inicial
+    parâmetro (StatesStructure) - estrutura contendo todos os estados, para escolher o estado atual do autômato
+    parâmetro (String) - cadeia de caracteres que indica qual estado devera ser selecionado
+    return (int) - valor inteiro indicando a posição de um estado dentro da cadeia de estados, caso o estado não exista é retornado -1
+*/
 int selectState(StatesStructure states, string stateName) {
     
     for (int thisState = 0; thisState < states.numberOfStates; thisState++) {   
@@ -310,7 +333,12 @@ int selectState(StatesStructure states, string stateName) {
     return -1;
 }
 
-// função que a partir de um carácter de entrada retorna a posição da transição correspondente dentro do estado
+/*
+    função que a partir de um carácter de entrada retorna a posição da transição correspondente dentro do estado
+    parâmetro (StateStructure) - estrutura de um estado, no qual será procurado o indice de uma transição
+    parâmetro (char) - caracter que representa indica a transição a ser feita
+    return (int) - valor inteiro indicando a posição de uma transição dentro de um estado, caso a trasição não exista é retornado -1
+*/
 int selectTransition(StateStructure state, char inputLetter) {
     
     for (int thisTransition = 0; thisTransition < state.numberOfTransitions; thisTransition++) {
@@ -322,9 +350,11 @@ int selectTransition(StateStructure state, char inputLetter) {
     return -1;
 }
 
-// função que realiza a leitura de uma transição a partir do arquivo de entrada
-// parâmetro (string) - linha lida do arquivo a qual contém os estados finais do automato
-// return (TransitionStructure) - Uma transição
+/*
+    função que realiza a leitura de uma transição a partir do arquivo de entrada
+    parâmetro (string) - cadeia de caracteres lida do arquivo a qual contém os estados finais do automato
+    return (TransitionStructure) - estrutura de uma transição preenchida a partir do arquivo de entrada
+*/
 TransitionStructure readTransition(string line) {
     
     TransitionStructure transition = initializeTransition();
@@ -350,11 +380,12 @@ TransitionStructure readTransition(string line) {
     return transition;
 }
 
-// função que realiza a leitura de um conjunto de transições a partir do arquivo de entrada
-// parâmetro (ifstream *) - ponteiro que aponta para o arquivo aberto
-// parâmetro (StateStructure) - Estrutura com todos os estados do automato
-
-// return (StatesStructure) - Não sei
+/*
+    função que realiza a leitura de um conjunto de transições a partir do arquivo de entrada
+    parâmetro (ifstream *) - ponteiro que aponta para o arquivo aberto
+    parâmetro (StatesStructure) - estrutura com todos os estados do automato
+    return (StatesStructure) - estrutura com todos os estados do automato
+*/
 StatesStructure readTransitions(StatesStructure states, ifstream* inputFile) {
     
     string line = "";
@@ -386,10 +417,12 @@ StatesStructure readTransitions(StatesStructure states, ifstream* inputFile) {
     return states;
 }
 
-// função que realiza a leitura do arquivo de entrada
-// parâmetro (ifstream *) - ponteiro que aponta para o arquivo aberto
-// return (AutomatonStructure) - Retorna o automato completo preenchido pelos dados do arquivo
-// pré-condição: ter um arquivo válido aberto
+/*
+    função que realiza a leitura do arquivo de entrada
+    parâmetro (ifstream *) - ponteiro que aponta para o arquivo aberto
+    return (AutomatonStructure) - retorna o automato completo preenchido pelos dados do arquivo
+    pré-condição: ter um arquivo válido aberto
+*/
 AutomatonStructure readAutomaton(ifstream* inputFile) {
     
     AutomatonStructure automaton = initialize();
@@ -415,9 +448,11 @@ AutomatonStructure readAutomaton(ifstream* inputFile) {
     return automaton;
 }
 
-// função que realiza o manejo do arquivo de entrada
-// parâmetro (string) fileName - Nome ou caminho do arquivo a ser aberto
-// return (AutomatonStructure) - Retorna o automato completo preenchido pelos dados do arquivo
+/*
+    função que realiza o manejo do arquivo de entrada
+    parâmetro (string) fileName - nome ou caminho do arquivo a ser aberto
+    return (AutomatonStructure) - automato completo preenchido pelos dados do arquivo
+*/
 AutomatonStructure readInputFile(string fileName) {
     
     AutomatonStructure automaton = initialize();

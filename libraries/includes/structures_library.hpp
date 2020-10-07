@@ -1,10 +1,13 @@
 #ifndef STRUCTURES
 #define STRUCTURES
-// este arquivo contem a definição de todas as estruturas utilizadas
 
 #include "call_libs.hpp"
 
 using namespace std;
+
+/*
+    este arquivo contem a definição de todas as estruturas utilizadas
+*/
 
 // estrutura de um determinado alfabeto
 struct AlphabetStructure {

@@ -5,7 +5,9 @@
 #include "initialization.hpp"
 #include "print_stdio.hpp"
 
-// este arquivo é responsável por definir todas as funções encarregadas de ler o arquivo de entrada
+/*
+    este arquivo é responsável por definir todas as funções encarregadas de ler o arquivo de entrada
+*/
 
 // função para retirar os espaços vazios de uma string, linha
 string removeStringSpaces(string line);
