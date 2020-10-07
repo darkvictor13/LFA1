@@ -8,8 +8,8 @@ string removeStringSpaces(string line) {
     string newLine = "";
 
     for (int i = 0; i < (int)line.size(); i++) {
-        //if (line[i] != ' ' && line[i] != 9) {
-		if (line[i] != ' ') {
+        if (line[i] != ' ' && line[i] != 9) {
+		//if (line[i] != ' ') {
             newLine += line[i];
         }
     }
@@ -348,6 +348,10 @@ StatesStructure readTransitions(StatesStructure states, ifstream* inputFile) {
 
         line = removeStringSpaces(line);
 
+        if( line[0] != '(' ) {
+            continue;
+        }
+           
         verifyTransitionLine(line);
 
         for( position = 1; line[position] != ','; position++);

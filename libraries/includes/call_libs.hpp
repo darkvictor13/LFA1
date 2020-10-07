@@ -8,8 +8,8 @@
 #include <string>
 
 // definindo constantes
-#define MAX_STATES 20
-#define MAX_TRANSITIONS 20
+#define MAX_STATES 30
+#define MAX_TRANSITIONS 30
 #define MIN_BLANK_SPACES 4 
 
 #endif
