@@ -1,5 +1,12 @@
+// Esse segmento de código é resposanvel pela inicialização das estruturas utilizadas.
+
 #include "../includes/initialization.hpp"
 
+/* 
+	Função que inicializa a estrutura de um determinado Alfabeto
+	parâmetro (void) - sem parâmetros
+	return AlphabetStructure inicializada
+*/
 AlphabetStructure initializeAlphabet () {
 	AlphabetStructure aux;
 	aux.alphabet = "";
@@ -7,6 +14,11 @@ AlphabetStructure initializeAlphabet () {
 	return aux;
 }
 
+/* 
+	Função que inicializa a estrutura de uma unica transição
+	parâmetro (void) - sem parâmetros
+	return TransitionStructure inicializada
+*/
 TransitionStructure initializeTransition () {
 	TransitionStructure aux;
 	aux.endTransition = "";
@@ -15,6 +27,11 @@ TransitionStructure initializeTransition () {
 	return aux;
 }
 
+/* 
+	Função que inicializa a estrutura de um unico estado
+	parâmetro (void) - sem parâmetros
+	return StateStructure inicializada
+*/
 StateStructure initializeState () {
 	StateStructure aux;
 	aux.numberOfTransitions = 0;
@@ -25,6 +42,11 @@ StateStructure initializeState () {
 	return aux;
 }
 
+/* 
+	Função que inicializa a estrutura que representa os conjuntos de estados
+	parâmetro (void) - sem parâmetros
+	return StatesStructure inicializada
+*/
 StatesStructure initializeStates () {
 	StatesStructure aux;
 	aux.numberOfStates = 0;
@@ -34,6 +56,11 @@ StatesStructure initializeStates () {
 	return aux;
 }
 
+/* 
+	Função que inicializa a estrutura da lista de estados finais
+	parâmetro (void) - sem parâmetros
+	return EndStatesStructure inicializada
+*/
 EndStatesStructure initializeEndStates () {
 	EndStatesStructure aux;
 	aux.numberOfEndStates = 0;
@@ -43,6 +70,11 @@ EndStatesStructure initializeEndStates () {
 	return aux;
 }
 
+/* 
+	Função que inicializa a estrutura de um autômato
+	parâmetro (void) - sem parâmetros
+	return AutomatonStructure inicializada
+*/
 AutomatonStructure initialize () {
 	AutomatonStructure aux;
 	aux.initState = "";
@@ -53,6 +85,11 @@ AutomatonStructure initialize () {
 	return aux;
 }
 
+/* 
+	Função que inicializa a estrutura que representa um autômato em funcionamento
+	parâmetro (void) - sem parâmetros
+	return AutomatonStatusStructure inicializada
+*/
 AutomatonStatusStructure initializeAutomatonController () {
 	AutomatonStatusStructure aux;
 	aux.thisState = initializeState();
