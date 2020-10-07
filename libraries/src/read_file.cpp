@@ -8,7 +8,8 @@ string removeStringSpaces(string line) {
     string newLine = "";
 
     for (int i = 0; i < (int)line.size(); i++) {
-        if (line[i] != ' ') {
+        //if (line[i] != ' ' && line[i] != 9) {
+		if (line[i] != ' ') {
             newLine += line[i];
         }
     }
