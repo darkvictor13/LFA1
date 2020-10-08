@@ -136,7 +136,6 @@ void printInitState(string initState) {
 
 }
 
-<<<<<<< HEAD
 /* 
 	função que imprime na saída padrão os estados finais de um autômato
 	parâmetro (EndStatesStructure) endStates - Estados finais inicializados pelo arquivo
