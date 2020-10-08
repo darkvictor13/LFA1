@@ -4,11 +4,11 @@
 
 #include "../includes/print_stdio.hpp"
 
-
 /* 
-	 Imprime as mensagens que encerram o arquivo
-	 parâmetro (int) code - Código do erro
-	 parâmetro (string) message - Mensagem de identificação do erro
+	Imprime as mensagens que encerram o arquivo
+	parâmetro (int) code - Código do erro
+	parâmetro (string) message - Mensagem de identificação do erro
+	return - Não tem
 */
 void errorMessagesCode(int code, string message) {
 
@@ -47,6 +47,7 @@ void errorMessagesCode(int code, string message) {
 /* 
 	função que escreve na saída padrão a mensagem de bem vindo ao programa
 	parâmetro (void) - sem parâmetros
+	return - Não tem
 */
 void welcomeMessage() {
     
@@ -60,9 +61,10 @@ void welcomeMessage() {
 }
 
 /* 
-	 função que imprime na saída padrão um alfabeto
-	 parâmetro (alphabetStructure) alphabet - Alfabeto inicializado pelo arquivo
-	 pré-condição: Estrutura previamente inicializada
+	função que imprime na saída padrão um alfabeto
+	parâmetro (alphabetStructure) alphabet - Alfabeto inicializado pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
 */
 void printAlphabet(AlphabetStructure alphabet) {
 
@@ -74,9 +76,10 @@ void printAlphabet(AlphabetStructure alphabet) {
 }
 
 /* 
-	 função que imprime na saída padrão um alfabeto
-	 parâmetro (alphabetStructure) inputAlphabet - Alfabeto de entrada inicializado pelo arquivo
-	 pré-condição: Estrutura previamente inicializada
+	função que imprime na saída padrão um alfabeto
+	parâmetro (alphabetStructure) inputAlphabet - Alfabeto de entrada inicializado pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
 */
 void printInputAlphabet(AlphabetStructure inputAlphabet) {
 
@@ -88,9 +91,10 @@ void printInputAlphabet(AlphabetStructure inputAlphabet) {
 }
 
 /* 
-	 função que imprime na saída padrão um alfabeto
-	 parâmetro (alphabetStructure) outputAlphabet - Alfabeto de saída inicializado pelo arquivo
-	 pré-condição: Estrutura previamente inicializada
+	função que imprime na saída padrão um alfabeto
+	parâmetro (alphabetStructure) outputAlphabet - Alfabeto de saída inicializado pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
 */
 void printOutputAlphabet(AlphabetStructure outputAlphabet) {
 
@@ -102,9 +106,10 @@ void printOutputAlphabet(AlphabetStructure outputAlphabet) {
 }
 
 /* 
-	 função que imprime na saída padrão os estados de um autômato
-	 parâmetro (StatesStructure) states - Estados inicializados pelo arquivo
-	 pré-condição: Estrutura previamente inicializada
+	função que imprime na saída padrão os estados de um autômato
+	parâmetro (StatesStructure) states - Estados inicializados pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
 */
 void printStates(StatesStructure states) {
 
@@ -120,9 +125,10 @@ void printStates(StatesStructure states) {
 }
 
 /* 
-	 função que imprime na saída padrão o estado inicial de um autômato
-	 parâmetro (string) initStates - Estado inicial inicializado pelo arquivo
-	 pré-condição: Estrutura previamente inicializada
+	função que imprime na saída padrão o estado inicial de um autômato
+	parâmetro (string) initStates - Estado inicial inicializado pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
 */
 void printInitState(string initState) {
 
@@ -130,10 +136,12 @@ void printInitState(string initState) {
 
 }
 
+<<<<<<< HEAD
 /* 
-	 função que imprime na saída padrão os estados finais de um autômato
-	 parâmetro (EndStatesStructure) endStates - Estados finais inicializados pelo arquivo
-	 pré-condição: Estrutura previamente inicializada
+	função que imprime na saída padrão os estados finais de um autômato
+	parâmetro (EndStatesStructure) endStates - Estados finais inicializados pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
 */
 void printEndStates(EndStatesStructure endStates) {
 
@@ -149,9 +157,10 @@ void printEndStates(EndStatesStructure endStates) {
 }
 
 /* 
-	 função que imprime na saída padrão o conjunto de transições de um dado estado
-	 parâmetro (StateStructure) state - Estado inicializado pelo arquivo
-	 pré-condição: Estrutura previamente inicializada
+	função que imprime na saída padrão o conjunto de transições de um dado estado
+	parâmetro (StateStructure) state - Estado inicializado pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
 */
 void printStateTransitions(StateStructure state) {
 
@@ -172,9 +181,10 @@ void printStateTransitions(StateStructure state) {
 }
 
 /* 
-	 função que imprime na saída padrão todas as transições
-	 parâmetro (StatesStructure) states - Estados inicializados pelo arquivo
-	 pré-condição: Estrutura previamente inicializada
+	função que imprime na saída padrão todas as transições
+	parâmetro (StatesStructure) states - Estados inicializados pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
 */
 void printTransitions(StatesStructure states) {
 
@@ -186,9 +196,10 @@ void printTransitions(StatesStructure states) {
 }
 
 /* 
-	 função que imprime na saída padrão o autômato carregado a partir do arquivo inicial
-	 parâmetro (AutomatonStructure) automaton - Estrutura do autômato inicializada pelo arquivo
-	 pré-condição: Estrutura previamente inicializada
+	função que imprime na saída padrão o autômato carregado a partir do arquivo inicial
+	parâmetro (AutomatonStructure) automaton - Estrutura do autômato inicializada pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
 */
 void printAutomaton(AutomatonStructure automaton) {
 
@@ -214,8 +225,9 @@ void printAutomaton(AutomatonStructure automaton) {
 }
 
 /* 
-	 função que imprime na saída padrão mensagem de erro em caso da palavra de entrada conter carácteres inválidos para o autômato
-	 parâmetro (void) - sem parâmetros
+	função que imprime na saída padrão mensagem de erro em caso da palavra de entrada conter carácteres inválidos para o autômato
+	parâmetro (void) - sem parâmetros
+	return - Não tem
 */
 void printWordInvalidMessage() {
     
@@ -224,8 +236,9 @@ void printWordInvalidMessage() {
 }
 
 /* 
-	 função que imprime o número de espaços em brancos necessários para completar a linha
-	 parâmetro (int) n - Número de espaços em branco
+	função que imprime o número de espaços em brancos necessários para completar a linha
+	parâmetro (int) n - Número de espaços em branco
+	return - Não tem
 */
 void printBlankSpaces(int n) {
    
@@ -235,9 +248,10 @@ void printBlankSpaces(int n) {
 }
 
 /* 
-	 função que imprime na saída padrão o inicio do ciclo de transição
-	 parâmetro (string) stateName - Nome do Estado atual
-	 parâmetro (string) enterWord - Palavra inicial
+	função que imprime na saída padrão o inicio do ciclo de transição
+	parâmetro (string) stateName - Nome do Estado atual
+	parâmetro (string) enterWord - Palavra inicial
+	return - Não tem
 */
 void printInitTransitionMessage(string stateName, string enterWord) {
 
@@ -246,11 +260,12 @@ void printInitTransitionMessage(string stateName, string enterWord) {
 }
 
 /* 
-	 função que imprime na saída padrão o resultado de uma transição efetuada pelo autômato
-	 parâmetro (string) stateName - Nome do Estado atual
-	 parâmetro (string) word - Palavra no estado atual
-	 parâmetro (string) outputCharacters - Letra de saída no estado atual
-	 parâmetro (int) step - Passo atual
+	função que imprime na saída padrão o resultado de uma transição efetuada pelo autômato
+	parâmetro (string) stateName - Nome do Estado atual
+	parâmetro (string) word - Palavra no estado atual
+	parâmetro (string) outputCharacters - Letra de saída no estado atual
+	parâmetro (int) step - Passo atual
+	return - Não tem
 */
 void printTransitionMessage(string stateName, string word, string outputCharacters, int step) {
 
@@ -262,8 +277,9 @@ void printTransitionMessage(string stateName, string word, string outputCharacte
 }
 
 /* 
-	 função que imprime na saída padrão a mensagem que declara que a palavra é inválida
-	 parâmetro (void) - sem parâmetros
+	função que imprime na saída padrão a mensagem que declara que a palavra é inválida
+	parâmetro (void) - sem parâmetros
+	return - Não tem
 */
 void printValidWord() {
 
@@ -272,9 +288,12 @@ void printValidWord() {
 }
 
 /* 
-	 função que imprime na saída padrão a mensagem que declara que a palavra não é inválida
-	 parâmetro (void) - sem parâmetros
+	função que imprime na saída padrão a mensagem que declara que a palavra não é inválida
+	parâmetro (void) - sem parâmetros
+	return - Não tem
 */
+// função que imprime na saída padrão a mensagem que declara que a palavra não é inválida
+// parâmetro (void) - sem parâmetros
 void printInvalidWord() {
 
     cout << "REJEITA" << endl;
@@ -282,8 +301,9 @@ void printInvalidWord() {
 }
 
 /* 
-	 função que imprime na saída a palavra obtida no final do processo do autômato
-	 parâmetro (string) word - Palavra de saída
+	função que imprime na saída a palavra obtida no final do processo do autômato
+	parâmetro (string) word - Palavra de saída
+	return - Não tem
 */
 void printEndWordMessage(string word) {
 
@@ -293,8 +313,9 @@ void printEndWordMessage(string word) {
 }
 
 /* 
-	 função que imprime a mensagem de fechamento do programa
-	 parâmetro (void) - sem parâmetros
+	função que imprime a mensagem de fechamento do programa
+	parâmetro (void) - sem parâmetros
+	return - Não tem
 */
 void printEndProgramMessage() {
 
@@ -306,8 +327,9 @@ void printEndProgramMessage() {
 }
 
 /* 
-	 função que imprime mensagem pedindo a confirmação do usuário para encerrar o programa
-	 parâmetro (void) - sem parâmetros
+	função que imprime mensagem pedindo a confirmação do usuário para encerrar o programa
+	parâmetro (void) - sem parâmetros
+	return - Não tem
 */
 void printExitConfirmationMessage() {
 
@@ -316,8 +338,9 @@ void printExitConfirmationMessage() {
 }
 
 /* 
-	 função que imprime na tela mensagem sobre como entrar com a palavra
-	 parâmetro (void) - sem parâmetros
+	função que imprime na tela mensagem sobre como entrar com a palavra
+	parâmetro (void) - sem parâmetros
+	return - Não tem
 */
 void EnterWordMensage() {
 	cout << "Por favor insira uma palavra valida, ou [exit] para sair\n";
