@@ -1,13 +1,15 @@
 /* 
-   este arquivo é responsável por definir todas as funções encarregadas de imprimir na saida padrão
+   este arquivo é responsável por definir todas as funções encarregadas de imprimir na saída padrão
 */
 
 #include "../includes/print_stdio.hpp"
 
-// Imprime as mensagens que encerram o arquivo
-// parâmetro (int) code - Código do erro
-// parâmetro (string) message - Mensagem de identificação do erro
-// return - Não tem
+/* 
+	Imprime as mensagens que encerram o arquivo
+	parâmetro (int) code - Código do erro
+	parâmetro (string) message - Mensagem de identificação do erro
+	return - Não tem
+*/
 void errorMessagesCode(int code, string message) {
 
     switch(code) {
@@ -42,9 +44,11 @@ void errorMessagesCode(int code, string message) {
     exit(code);
 }
 
-// função que escreve na saida padrão a mensagem de bem vindo ao programa
-// parâmetro (void) - sem parâmetros
-// return - Não tem
+/* 
+	função que escreve na saída padrão a mensagem de bem vindo ao programa
+	parâmetro (void) - sem parâmetros
+	return - Não tem
+*/
 void welcomeMessage() {
     
     cout << endl 
@@ -56,10 +60,12 @@ void welcomeMessage() {
 
 }
 
-// função que imprime na saida padrão um alfabeto
-// parâmetro (alphabetStructure) alphabet - Alfabeto inicializado pelo arquivo
-// pré-condição: Estrutura previamente inicializada
-// return - Não tem
+/* 
+	função que imprime na saída padrão um alfabeto
+	parâmetro (alphabetStructure) alphabet - Alfabeto inicializado pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
+*/
 void printAlphabet(AlphabetStructure alphabet) {
 
     cout << alphabet.alphabet[0];
@@ -69,10 +75,12 @@ void printAlphabet(AlphabetStructure alphabet) {
     }
 }
 
-// função que imprime na saida padrão um alfabeto
-// parâmetro (alphabetStructure) inputAlphabet - Alfabeto de entrada inicializado pelo arquivo
-// pré-condição: Estrutura previamente inicializada
-// return - Não tem
+/* 
+	função que imprime na saída padrão um alfabeto
+	parâmetro (alphabetStructure) inputAlphabet - Alfabeto de entrada inicializado pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
+*/
 void printInputAlphabet(AlphabetStructure inputAlphabet) {
 
     cout << " -> alfabeto_entrada = { ";
@@ -82,23 +90,27 @@ void printInputAlphabet(AlphabetStructure inputAlphabet) {
     cout << " }" << endl;
 }
 
-// função que imprime na saida padrão um alfabeto
-// parâmetro (alphabetStructure) outputAlphabet - Alfabeto de saida inicializado pelo arquivo
-// pré-condição: Estrutura previamente inicializada
-// return - Não tem
+/* 
+	função que imprime na saída padrão um alfabeto
+	parâmetro (alphabetStructure) outputAlphabet - Alfabeto de saída inicializado pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
+*/
 void printOutputAlphabet(AlphabetStructure outputAlphabet) {
 
-    cout << " -> alfabeto_saida = { ";
+    cout << " -> alfabeto_saída = { ";
 
     printAlphabet(outputAlphabet);
 
     cout << " }" << endl;
 }
 
-// função que imprime na saida padrão os estados de um autômato
-// parâmetro (StatesStructure) states - Estados inicializados pelo arquivo
-// pré-condição: Estrutura previamente inicializada
-// return - Não tem
+/* 
+	função que imprime na saída padrão os estados de um autômato
+	parâmetro (StatesStructure) states - Estados inicializados pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
+*/
 void printStates(StatesStructure states) {
 
     cout << " -> estados = { ";
@@ -112,20 +124,25 @@ void printStates(StatesStructure states) {
     cout << " }" << endl;
 }
 
-// função que imprime na saida padrão o estado inicial de um autômato
-// parâmetro (string) initStates - Estado inicial inicializado pelo arquivo
-// pré-condição: Estrutura previamente inicializada
-// return - Não tem
+/* 
+	função que imprime na saída padrão o estado inicial de um autômato
+	parâmetro (string) initStates - Estado inicial inicializado pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
+*/
 void printInitState(string initState) {
 
     cout << " -> inicial = " << initState << endl;
 
 }
 
-// função que imprime na saida padrão os estados finais de um autômato
-// parâmetro (EndStatesStructure) endStates - Estados finais inicializados pelo arquivo
-// pré-condição: Estrutura previamente inicializada
-// return - Não tem
+<<<<<<< HEAD
+/* 
+	função que imprime na saída padrão os estados finais de um autômato
+	parâmetro (EndStatesStructure) endStates - Estados finais inicializados pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
+*/
 void printEndStates(EndStatesStructure endStates) {
 
     cout << " -> finais = { ";
@@ -139,10 +156,12 @@ void printEndStates(EndStatesStructure endStates) {
     cout << " }" << endl;
 }
 
-// função que imprime na saida padrão o conjunto de transições de um dado estado
-// parâmetro (StateStructure) state - Estado inicializado pelo arquivo
-// pré-condição: Estrutura previamente inicializada
-// return - Não tem
+/* 
+	função que imprime na saída padrão o conjunto de transições de um dado estado
+	parâmetro (StateStructure) state - Estado inicializado pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
+*/
 void printStateTransitions(StateStructure state) {
 
     for(int i = 0; i < state.numberOfTransitions; i++) {
@@ -161,10 +180,12 @@ void printStateTransitions(StateStructure state) {
     }
 }
 
-// função que imprime na saida padrão todas as transições
-// parâmetro (StatesStructure) states - Estados inicializados pelo arquivo
-// pré-condição: Estrutura previamente inicializada
-// return - Não tem
+/* 
+	função que imprime na saída padrão todas as transições
+	parâmetro (StatesStructure) states - Estados inicializados pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
+*/
 void printTransitions(StatesStructure states) {
 
     cout << " -> transicao:" << endl;
@@ -174,10 +195,12 @@ void printTransitions(StatesStructure states) {
     }
 }
 
-// função que imprime na saida padrão o autômato carregado a partir do arquivo inicial
-// parâmetro (AutomatonStructure) automaton - Estrutura do autômato inicializada pelo arquivo
-// pré-condição: Estrutura previamente inicializada
-// return - Não tem
+/* 
+	função que imprime na saída padrão o autômato carregado a partir do arquivo inicial
+	parâmetro (AutomatonStructure) automaton - Estrutura do autômato inicializada pelo arquivo
+	pré-condição: Estrutura previamente inicializada
+	return - Não tem
+*/
 void printAutomaton(AutomatonStructure automaton) {
 
     cout << "--------------------" << endl
@@ -201,18 +224,22 @@ void printAutomaton(AutomatonStructure automaton) {
 
 }
 
-// função que imprime na saida padrão mensagem de erro em caso da palavra de entrada conter carácteres inválidos para o autômato
-// parâmetro (void) - sem parâmetros
-// return - Não tem
+/* 
+	função que imprime na saída padrão mensagem de erro em caso da palavra de entrada conter carácteres inválidos para o autômato
+	parâmetro (void) - sem parâmetros
+	return - Não tem
+*/
 void printWordInvalidMessage() {
     
     cout << "Palavra invalida: existem caracteres que nao pertencem ao alfabeto inicial do automato." << endl << endl;
 
 }
 
-// função que imprime o número de espaços em brancos necessários para completar a linha
-// parâmetro (int) n - Número de espaços em branco
-// return - Não tem
+/* 
+	função que imprime o número de espaços em brancos necessários para completar a linha
+	parâmetro (int) n - Número de espaços em branco
+	return - Não tem
+*/
 void printBlankSpaces(int n) {
    
     for (int i = 0; i < n; i++) {
@@ -220,62 +247,76 @@ void printBlankSpaces(int n) {
     }
 }
 
-// função que imprime na saida padrão o inicio do ciclo de transição
-// parâmetro (string) stateName - Nome do Estado atual
-// parâmetro (string) enterWord - Palavra inicial
-// return - Não tem
+/* 
+	função que imprime na saída padrão o inicio do ciclo de transição
+	parâmetro (string) stateName - Nome do Estado atual
+	parâmetro (string) enterWord - Palavra inicial
+	return - Não tem
+*/
 void printInitTransitionMessage(string stateName, string enterWord) {
 
     cout << endl << "[" << stateName << "]" << enterWord << endl;
 
 }
 
-// função que imprime na saida padrão o resultado de uma transição efetuada pelo autômato
-// parâmetro (string) stateName - Nome do Estado atual
-// parâmetro (string) word - Palavra no estado atual
-// parâmetro (string) outputCharacters - Letra de saida no estado atual
-// parâmetro (int) step - Passo atual
-// return - Não tem
+/* 
+	função que imprime na saída padrão o resultado de uma transição efetuada pelo autômato
+	parâmetro (string) stateName - Nome do Estado atual
+	parâmetro (string) word - Palavra no estado atual
+	parâmetro (string) outputCharacters - Letra de saída no estado atual
+	parâmetro (int) step - Passo atual
+	return - Não tem
+*/
 void printTransitionMessage(string stateName, string word, string outputCharacters, int step) {
 
     cout << "[" << stateName << "]" << word;
         
     printBlankSpaces(MIN_BLANK_SPACES + step);
         
-    cout << "saida: " << outputCharacters << endl;
+    cout << "saída: " << outputCharacters << endl;
 }
 
-// função que imprime na saida padrão a mensagem que declara que a palavra é inválida
-// parâmetro (void) - sem parâmetros
-// return - Não tem
+/* 
+	função que imprime na saída padrão a mensagem que declara que a palavra é inválida
+	parâmetro (void) - sem parâmetros
+	return - Não tem
+*/
 void printValidWord() {
 
     cout << "ACEITA" << endl;
 
 }
 
-// função que imprime na saida padrão a mensagem que declara que a palavra não é inválida
+/* 
+	função que imprime na saída padrão a mensagem que declara que a palavra não é inválida
+	parâmetro (void) - sem parâmetros
+	return - Não tem
+*/
+// função que imprime na saída padrão a mensagem que declara que a palavra não é inválida
 // parâmetro (void) - sem parâmetros
-// return - Não tem
 void printInvalidWord() {
 
     cout << "REJEITA" << endl;
 
 }
 
-// função que imprime na saida a palavra obtida no final do processo do autômato
-// parâmetro (string) word - Palavra de saida
-// return - Não tem
+/* 
+	função que imprime na saída a palavra obtida no final do processo do autômato
+	parâmetro (string) word - Palavra de saída
+	return - Não tem
+*/
 void printEndWordMessage(string word) {
 
-    cout << "Palavra de saida: " 
+    cout << "Palavra de saída: " 
          << word << endl << endl;
 
 }
 
-// função que imprime a mensagem de fechamento do programa
-// parâmetro (void) - sem parâmetros
-// return - Não tem
+/* 
+	função que imprime a mensagem de fechamento do programa
+	parâmetro (void) - sem parâmetros
+	return - Não tem
+*/
 void printEndProgramMessage() {
 
     cout << endl 
@@ -285,18 +326,22 @@ void printEndProgramMessage() {
 
 }
 
-// função que imprime mensagem pedindo a confirmação do usuário para encerrar o programa
-// parâmetro (void) - sem parâmetros
-// return - Não tem
+/* 
+	função que imprime mensagem pedindo a confirmação do usuário para encerrar o programa
+	parâmetro (void) - sem parâmetros
+	return - Não tem
+*/
 void printExitConfirmationMessage() {
 
     cout << "Deseja finalizar o programa? [y/n] -> ";
 
 }
 
-// função que imprime na tela mensagem sobre como entrar com a palavra
-// parâmetro (void) - sem parâmetros
-// return - Não tem
+/* 
+	função que imprime na tela mensagem sobre como entrar com a palavra
+	parâmetro (void) - sem parâmetros
+	return - Não tem
+*/
 void EnterWordMensage() {
 	
     cout << "Por favor insira uma palavra valida, ou [exit] para sair\n";
