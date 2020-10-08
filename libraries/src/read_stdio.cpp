@@ -1,10 +1,14 @@
 #include"../includes/read_stdio.hpp"
 
 /*
-   este arquivo é responsável por definir todas as funções encarregadas de ler na saída padrão
+		este arquivo é responsável por definir todas as funções encarregadas de ler na saída padrão
 */
 
-// função que realiza a leitura de uma palavra a ser testada no autômato a partir da entrada padrão
+/*
+		função que realiza a leitura de uma palavra a ser testada no autômato a partir da entrada padrão
+		parâmetro (void) - sem parâmetros
+		return (string) - string lida do teclado
+*/
 string readWord() {
 
     string word = "";
@@ -14,19 +18,24 @@ string readWord() {
     return word;
 }
 
-// função que realiza a leitura da palavra que confirma a saída do programa
+
+/*
+		função que realiza a leitura da palavra que confirma a saída do programa
+		parâmetro (void) - sem parâmetros
+		return (bool) - verdadeiro caso o usuário queira encerrar o programa
+					  - falso caso ele não deseje encerrar o programa
+*/
 bool readExitConfirmationMessage() {
 
     string line = "";
-    bool boolean = 1;
 
     cin >> line;
 
     line = removeStringSpaces(line);
 
-    if ( line == "y" || line == "Y" || line == "yes" || line == "YES" || line == "Yes" )
-        boolean = 0;
-    
+    if ( line[0] == 'y' || line[0] == 'Y') {
+        return false;
+		}
 
-    return boolean;
+    return true;
 }

@@ -1,67 +1,104 @@
+// Esse segmento de código é resposanvel pela inicialização das estruturas utilizadas.
+
 #include "../includes/initialization.hpp"
 
+/* 
+	função que inicializa a estrutura de um determinado Alfabeto
+	parâmetro (void) - sem parâmetros
+	return (AlphabetStructure) - inicializada
+*/
 AlphabetStructure initializeAlphabet () {
-	AlphabetStructure aux;
-	aux.alphabet = "";
-	aux.alphabetSize = 0;
-	return aux;
+	AlphabetStructure alphabetStructure;
+	alphabetStructure.alphabet = "";
+	alphabetStructure.alphabetSize = 0;
+	return alphabetStructure;
 }
 
+/* 
+	função que inicializa a estrutura de uma unica transição
+	parâmetro (void) - sem parâmetros
+	return (TransitionStructure) - inicializada
+*/
 TransitionStructure initializeTransition () {
-	TransitionStructure aux;
-	aux.endTransition = "";
-	aux.inputCharacter = 0;
-	aux.outputCharacters = "";
-	return aux;
+	TransitionStructure transitionStructure;
+	transitionStructure.endTransition = "";
+	transitionStructure.inputCharacter = 0;
+	transitionStructure.outputCharacters = "";
+	return transitionStructure;
 }
 
+/* 
+	função que inicializa a estrutura de um unico estado
+	parâmetro (void) - sem parâmetros
+	return (StateStructure) - inicializada
+*/
 StateStructure initializeState () {
-	StateStructure aux;
-	aux.numberOfTransitions = 0;
-	aux.stateName = "";
+	StateStructure stateStructure;
+	stateStructure.numberOfTransitions = 0;
+	stateStructure.stateName = "";
 	for (int i = 0; i < MAX_TRANSITIONS; i++) {
-		aux.transitions[i] = initializeTransition();
+		stateStructure.transitions[i] = initializeTransition();
 	}
-	return aux;
+	return stateStructure;
 }
 
+/* 
+	função que inicializa a estrutura que representa os conjuntos de estados
+	parâmetro (void) - sem parâmetros
+	return (StatesStructure) - inicializada
+*/
 StatesStructure initializeStates () {
-	StatesStructure aux;
-	aux.numberOfStates = 0;
+	StatesStructure statesStructure;
+	statesStructure.numberOfStates = 0;
 	for (int i = 0; i < MAX_STATES; i++) {
-		aux.states[i] = initializeState();
+		statesStructure.states[i] = initializeState();
 	}
-	return aux;
+	return statesStructure;
 }
 
+/* 
+	função que inicializa a estrutura da lista de estados finais
+	parâmetro (void) - sem parâmetros
+	return (EndStatesStructure) - inicializada
+*/
 EndStatesStructure initializeEndStates () {
-	EndStatesStructure aux;
-	aux.numberOfEndStates = 0;
+	EndStatesStructure endStatesStructure;
+	endStatesStructure.numberOfEndStates = 0;
 	for (int i = 0; i < MAX_STATES; i++) {
-		aux.states[i] = "";
+		endStatesStructure.states[i] = "";
 	}
-	return aux;
+	return endStatesStructure;
 }
 
+/* 
+	função que inicializa a estrutura de um autômato
+	parâmetro (void) - sem parâmetros
+	return (AutomatonStructure) - inicializada
+*/
 AutomatonStructure initialize () {
-	AutomatonStructure aux;
-	aux.initState = "";
-	aux.inputAlphabet = initializeAlphabet();
-	aux.outputAlphabet = initializeAlphabet();
-	aux.endStates = initializeEndStates();
-	aux.states = initializeStates();
-	return aux;
+	AutomatonStructure automatonStructure;
+	automatonStructure.initState = "";
+	automatonStructure.inputAlphabet = initializeAlphabet();
+	automatonStructure.outputAlphabet = initializeAlphabet();
+	automatonStructure.endStates = initializeEndStates();
+	automatonStructure.states = initializeStates();
+	return automatonStructure;
 }
 
+/* 
+	função que inicializa a estrutura que representa um autômato em funcionamento
+	parâmetro (void) - sem parâmetros
+	return (AutomatonStatusStructure) - inicializada
+*/
 AutomatonStatusStructure initializeAutomatonController () {
-	AutomatonStatusStructure aux;
-	aux.thisState = initializeState();
-	aux.transition = initializeTransition();
-	aux.word = "";
-	aux.exitWord = "";
-	aux.stateName = "";
-	aux.transitionNumber = 0;
-	aux.stateNumber = 0;
-	aux.step = 0;
-	return aux;
+	AutomatonStatusStructure automatonStatusStructure;
+	automatonStatusStructure.thisState = initializeState();
+	automatonStatusStructure.transition = initializeTransition();
+	automatonStatusStructure.word = "";
+	automatonStatusStructure.exitWord = "";
+	automatonStatusStructure.stateName = "";
+	automatonStatusStructure.transitionNumber = 0;
+	automatonStatusStructure.stateNumber = 0;
+	automatonStatusStructure.step = 0;
+	return automatonStatusStructure;
 }

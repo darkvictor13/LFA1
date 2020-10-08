@@ -1,5 +1,11 @@
 #include "../includes/automaton_controller.hpp"
 
+/*
+    função que verifica se um determinado estado é estado final do autômato
+    parâmetro (EndStatesStructure) - estrutura contendo todos os estados finais do autômato
+    parâmetro (string) - cadeia de caracteres contendo o nome do estado atual 
+	return (AlphabetStructure) - valor booleano indicando se o estado atual é ou não um estado final
+*/
 bool verifyValidEndState(EndStatesStructure endStatesStructure, string endState) {
     
     for (int  i = 0; i < endStatesStructure.numberOfEndStates; i++) {
@@ -11,7 +17,12 @@ bool verifyValidEndState(EndStatesStructure endStatesStructure, string endState)
     return 0;
 }
 
-// função que realiza uma dada transição do autômato definido no arquivo de entrada
+/*
+    função que realiza uma dada transição do autômato definido no arquivo de entrada
+    parâmetro (AutomatonStatusStructure) - estrutura contendo todos os dados que definen em que momento da execução se encontra o autômato
+    parâmetro (AutomatonStructure) - estrutura contendo todos os dados do autômato
+	return (AutomatonStatusStructure) - estrutura contendo todos os dados que definen do autômato que definem como ele se enconra após a execução da transição
+*/
 AutomatonStatusStructure makeTransition(AutomatonStatusStructure runningAutomaton, AutomatonStructure automaton) {
     
     runningAutomaton.transitionNumber = selectTransition(runningAutomaton.thisState, runningAutomaton.word[0]);
@@ -44,7 +55,11 @@ AutomatonStatusStructure makeTransition(AutomatonStatusStructure runningAutomato
     return makeTransition(runningAutomaton, automaton);
 }
 
-// função que realiza uma verificação previa da palavra entrada pelo usuário
+/*
+    função que realiza uma verificação previa da palavra entrada pelo usuário
+    parâmetro (string) - contendo a palavra entrada pelo usuário 
+	return (bool) - valor booleano que indica se a palavra entrada corresponde ou não com a instrução de saída
+*/
 bool preVerifyWord(string word) {
 
     if( word == "exit" ) {
@@ -58,7 +73,12 @@ bool preVerifyWord(string word) {
     return 1;
 }
 
-// função que verifica se a palavra entrada pelo usuário é composta pelo alfabeto de entrada
+/*
+    função que verifica se a palavra entrada pelo usuário é composta pelo alfabeto de entrada
+    parâmetro (AlphabetStructure) - estrutura de um dos alfabetos do autômato
+    parâmetro (string) - cadeia de caracteres que representa a entrada completa do usuário a ser colocado no autômato
+	return (bool) - valor booleano indicando se a palavra de entrada contem ou não carateres inválidos
+*/
 bool verifyWordIfInAlphabet(AlphabetStructure alphabet, string word) {
 
     for(int i = 0; i < word.size(); i++) {
@@ -70,7 +90,12 @@ bool verifyWordIfInAlphabet(AlphabetStructure alphabet, string word) {
     return true;    
 }
 
-// função que verifica se a palavra entrada pelo usuário é válida para o autômato carregado
+/*
+    função que verifica se a palavra entrada pelo usuário é válida para o autômato carregado
+    parâmetro (AutomatonStatusStructure) - estrutura contendo todos os dados que definen em que momento da execução se encontra o autômato
+    parâmetro (AutomatonStructure) - estrutura contendo todos os dados do autômato
+	return (void)
+*/
 void runAutomaton(AutomatonStatusStructure runningAutomaton, AutomatonStructure automaton) {
 
     printInitTransitionMessage(runningAutomaton.thisState.stateName, runningAutomaton.word);
@@ -87,7 +112,11 @@ void runAutomaton(AutomatonStatusStructure runningAutomaton, AutomatonStructure 
    
 }
 
-// função que permite a entrada varias palavras pelo usuário
+/*
+    função que permite a entrada varias palavras pelo usuário
+    parâmetro (AutomatonStructure) - estrutura contendo todos os dados do autômato
+	return (void)
+*/
 void enterWords(AutomatonStructure automaton) {
     
     string word = "";
@@ -96,16 +125,6 @@ void enterWords(AutomatonStructure automaton) {
     word = removeStringSpaces( readWord() );
 
     while( preVerifyWord(word) ) {
-
-        /*if( word == "@" ) {
-            if( verifyValidEndState(automaton.endStates, automaton.initState ) ) {
-                printValidWord();
-            }else{
-                printInvalidWord();
-            }
-            word = removeStringSpaces( readWord() );
-            continue;
-        }*/
         
         if( verifyWordIfInAlphabet(automaton.inputAlphabet, word) ) {
             
