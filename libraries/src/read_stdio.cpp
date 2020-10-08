@@ -23,9 +23,8 @@ string readWord() {
 		função que realiza a leitura da palavra que confirma a saída do programa
 		parâmetro (void) - sem parâmetros
 		return (bool) - verdadeiro caso o usuário queira encerrar o programa
-									- falso caso ele não deseje encerrar o programa
+					  - falso caso ele não deseje encerrar o programa
 */
-
 bool readExitConfirmationMessage() {
 
     string line = "";

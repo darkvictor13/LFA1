@@ -342,5 +342,7 @@ void printExitConfirmationMessage() {
 	return - Não tem
 */
 void EnterWordMensage() {
-	cout << "Por favor insira uma palavra valida, ou [exit] para sair\n";
+	
+    cout << "Por favor insira uma palavra valida, ou [exit] para sair\n";
+
 }
