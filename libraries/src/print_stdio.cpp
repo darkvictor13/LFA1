@@ -98,7 +98,7 @@ void printInputAlphabet(AlphabetStructure inputAlphabet) {
 */
 void printOutputAlphabet(AlphabetStructure outputAlphabet) {
 
-    cout << " -> alfabeto_saída = { ";
+    cout << " -> alfabeto_saida = { ";
 
     printAlphabet(outputAlphabet);
 
@@ -136,7 +136,6 @@ void printInitState(string initState) {
 
 }
 
-<<<<<<< HEAD
 /* 
 	função que imprime na saída padrão os estados finais de um autômato
 	parâmetro (EndStatesStructure) endStates - Estados finais inicializados pelo arquivo
@@ -273,7 +272,7 @@ void printTransitionMessage(string stateName, string word, string outputCharacte
         
     printBlankSpaces(MIN_BLANK_SPACES + step);
         
-    cout << "saída: " << outputCharacters << endl;
+    cout << "saida: " << outputCharacters << endl;
 }
 
 /* 
@@ -307,7 +306,7 @@ void printInvalidWord() {
 */
 void printEndWordMessage(string word) {
 
-    cout << "Palavra de saída: " 
+    cout << "Palavra de saida: " 
          << word << endl << endl;
 
 }
